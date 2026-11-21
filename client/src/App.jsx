@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import Portfolio from './pages/Portfolio';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Admin from './pages/Admin';
+import React, { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import WhatsAppFloat from "./components/WhatsAppFloat";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import Portfolio from "./pages/Portfolio";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -21,7 +21,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen font-sans text-slate-900">
+      <div className="flex flex-col min-h-screen font-sans text-slate-800 bg-white">
         <Navbar />
         <main className="flex-grow">
           <Routes>
@@ -30,10 +30,10 @@ export default function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
         <Footer />
+        <WhatsAppFloat />
       </div>
     </BrowserRouter>
   );

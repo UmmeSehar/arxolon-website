@@ -1,9 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Plus, Minus, Sparkles } from "lucide-react";
+import { ArrowRight, Plus, Minus, Sparkles, CheckCircle2, Star } from "lucide-react";
+
+const FALLBACK_MEDIA =
+  "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80";
 
 export default function Home() {
+  const [heroZoomed, setHeroZoomed] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
+
+  const handleImgError = (e) => {
+    if (e.currentTarget.src !== FALLBACK_MEDIA) {
+      e.currentTarget.src = FALLBACK_MEDIA;
+    }
+  };
 
   const services = [
     {
@@ -14,7 +24,7 @@ export default function Home() {
     {
       title: "Social Media Marketing",
       desc: "Targeted campaigns on social platforms to reach real audiences, inquiries, and brand growth.",
-      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+      img: "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=900&q=80",
     },
     {
       title: "Mobile App Development",
@@ -39,7 +49,7 @@ export default function Home() {
     {
       title: "Video Editing",
       desc: "Engaging short-form reels, promos, and clean video edits with smooth pacing and sound.",
-      img: "https://images.unsplash.com/photo-1574717024653-61fd2323656d?auto=format&fit=crop&w=900&q=80",
+      img: "https://images.unsplash.com/photo-1574717024653-61fd3113ff6d?auto=format&fit=crop&w=900&q=80",
     },
     {
       title: "E-Commerce Fashion & Retail Store",
@@ -67,18 +77,42 @@ export default function Home() {
       a: "Visit the Contact page, select your service, and share your details so our team can respond.",
     },
     {
+      q: "Do I need technical knowledge to work with your team?",
+      a: "No technical knowledge is needed. We explain steps in simple, clear words and handle the work for you.",
+    },
+    {
       q: "Are all pages mobile-friendly?",
       a: "Yes, the layout adapts to mobile screens, tablets, and desktops.",
     },
     {
+      q: "Can you manage multiple social media accounts together?",
+      a: "Yes, our Social Media Account Management service handles regular posting and account upkeep across platforms.",
+    },
+    {
+      q: "Do you edit short videos, reels, and promotional clips?",
+      a: "Yes, our Video Editing service covers clean cuts, sound balance, captions, and social-ready formats.",
+    },
+    {
+      q: "Can you build online stores for fashion and retail brands?",
+      a: "Yes, we build E-Commerce Fashion & Retail Store layouts designed for product displays and smooth browsing.",
+    },
+    {
+      q: "Can we request changes before final delivery?",
+      a: "Yes, we review and refine details so the final result matches your expectations.",
+    },
+    {
       q: "Can we discuss additional project details directly with the team?",
-      a: "Yes, once you connect with our team, you can discuss your specific goals and project details directly.",
+      a: "Yes, once you connect with our team, you can discuss your specific goals and additional project details directly.",
+    },
+    {
+      q: "How do we contact you directly for quick questions?",
+      a: "You can use the Contact page form, email info.arxolontech@gmail.com, or chat on WhatsApp.",
     },
   ];
 
   return (
     <div>
-      {/* 1. HERO SECTION (Dark Navy Matching Header & Footer) */}
+      {/* 1. HERO SECTION */}
       <section className="bg-gradient-to-br from-[#051836] via-[#09295B] to-[#0E3A7A] text-white pt-28 pb-20 lg:pt-36 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7">
@@ -109,46 +143,59 @@ export default function Home() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="rounded-3xl overflow-hidden border border-sky-300/25 shadow-2xl bg-[#07214A]">
+            <div className="rounded-3xl overflow-visible border border-sky-300/25 shadow-2xl bg-[#07214A] p-2">
               <img
                 src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80"
                 alt="Digital Workspace"
-                className="w-full h-72 sm:h-80 object-cover"
+                onError={handleImgError}
+                onClick={() => setHeroZoomed(!heroZoomed)}
+                className={`w-full h-72 sm:h-80 object-cover rounded-2xl hero-motion-img ${
+                  heroZoomed ? "is-zoomed shadow-2xl" : ""
+                }`}
               />
+              <p className="text-[11px] text-sky-200/80 text-center mt-2">
+                Click image to {heroZoomed ? "reset zoom" : "zoom"}
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. 9 SERVICES WITH MATCHING PICTURES (Light-Blue / Navy Combo, Not All Plain White) */}
-      <section className="py-20 bg-gradient-to-b from-[#EAF4FF] via-[#DCEEFF] to-[#CFE6FF] text-[#051836]">
+      {/* 2. 9 SERVICES WITH MOVED IMAGES */}
+      <section className="py-20 bg-gradient-to-b from-[#082A5E] via-[#0B3D82] to-[#124FA3] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#0B5ED7]">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-sky-300">
               Our Services
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#051836] mt-1">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-1">
               9 Core Services
             </h2>
+            <p className="text-blue-100 mt-2 text-sm sm:text-base">
+              Simple, practical solutions designed for easy understanding and steady business growth.
+            </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
             {services.map((srv, idx) => (
               <div
                 key={idx}
-                className="bg-white/95 border border-blue-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition flex flex-col justify-between"
+                className="bg-[#07214A] border border-sky-300/25 rounded-2xl overflow-hidden shadow-lg hover:border-sky-300 transition flex flex-col justify-between"
               >
                 <div>
-                  <img
-                    src={srv.img}
-                    alt={srv.title}
-                    className="w-full h-48 object-cover"
-                  />
+                  <div className="overflow-hidden">
+                    <img
+                      src={srv.img}
+                      alt={srv.title}
+                      onError={handleImgError}
+                      className="w-full h-48 object-cover live-motion-img"
+                    />
+                  </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-extrabold text-[#051836] mb-2">
+                    <h3 className="text-xl font-extrabold text-white mb-2">
                       {srv.title}
                     </h3>
-                    <p className="text-sm text-slate-700 leading-relaxed">
+                    <p className="text-sm text-blue-100 leading-relaxed">
                       {srv.desc}
                     </p>
                   </div>
@@ -156,7 +203,7 @@ export default function Home() {
                 <div className="px-6 pb-6">
                   <Link
                     to="/contact"
-                    className="inline-flex items-center gap-1.5 text-sm font-extrabold text-[#0B5ED7] hover:text-[#051836]"
+                    className="inline-flex items-center gap-1.5 text-sm font-extrabold text-sky-300 hover:text-white"
                   >
                     Get Started <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -167,7 +214,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. 5 STEPS SECTION (Dark Navy / Royal Blue Combo) */}
+      {/* 3. HIGHLIGHTS */}
+      <section className="py-16 bg-gradient-to-r from-[#DCEEFF] via-[#EAF4FF] to-[#DCEEFF] text-[#051836]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-2xl p-6 border border-blue-200 shadow-sm">
+            <CheckCircle2 className="w-6 h-6 text-[#0B5ED7] mb-3" />
+            <h3 className="font-extrabold text-lg text-[#051836] mb-1.5">Easy for Everyone</h3>
+            <p className="text-sm text-slate-700 leading-relaxed">
+              Clear communication without confusing technical terms so any business owner can follow along easily.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl p-6 border border-blue-200 shadow-sm">
+            <CheckCircle2 className="w-6 h-6 text-[#0B5ED7] mb-3" />
+            <h3 className="font-extrabold text-lg text-[#051836] mb-1.5">All-in-One Creative & Tech</h3>
+            <p className="text-sm text-slate-700 leading-relaxed">
+              From websites and mobile apps to graphics, video edits, stores, and social management in one place.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl p-6 border border-blue-200 shadow-sm">
+            <CheckCircle2 className="w-6 h-6 text-[#0B5ED7] mb-3" />
+            <h3 className="font-extrabold text-lg text-[#051836] mb-1.5">Direct Team Discussion</h3>
+            <p className="text-sm text-slate-700 leading-relaxed">
+              Connect with our team to share your exact goals and discuss additional advantages for your project.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. 5 STEPS SECTION */}
       <section className="py-20 bg-gradient-to-r from-[#051836] via-[#082A5E] to-[#0B428A] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-10">
@@ -190,8 +264,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. FAQ SECTION (Soft Sky Blue Surface) */}
-      <section className="py-16 bg-[#E6F2FF] text-[#051836]">
+      {/* 5. CLIENT FEEDBACK SECTION */}
+      <section className="py-16 bg-[#082A5E] text-white border-t border-sky-300/15">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-extrabold mb-8">Client Feedback</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Tariq Mahmood",
+                role: "Business Owner",
+                quote: "Simple process, clear updates, and a website that looks clean on both desktop and mobile.",
+              },
+              {
+                name: "Sana Tariq",
+                role: "Retail Store Founder",
+                quote: "Great help with product visuals, social media handling, and timely delivery.",
+              },
+              {
+                name: "Usman Khalid",
+                role: "Service Provider",
+                quote: "Easy to talk to the team and discuss project needs without complicated jargon.",
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-[#051836] border border-sky-300/20 rounded-2xl p-6">
+                <div className="flex gap-1 text-amber-400 mb-3">
+                  {[...Array(5)].map((_, s) => (
+                    <Star key={s} className="w-4 h-4 fill-current" />
+                  ))}
+                </div>
+                <p className="text-sm text-blue-100 leading-relaxed mb-4">"{item.quote}"</p>
+                <p className="font-bold text-white text-sm">{item.name}</p>
+                <p className="text-xs text-sky-300">{item.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. COMMON QUESTIONS (9 Questions) */}
+      <section className="py-16 bg-gradient-to-b from-[#DCEEFF] to-[#CFE6FF] text-[#051836]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#051836] mb-6">
             Common Questions

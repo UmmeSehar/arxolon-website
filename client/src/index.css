@@ -4,13 +4,45 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
-body {
-  overflow-x: hidden;
+@keyframes gentleDrift {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-7px) scale(1.015);
+  }
 }
 
-h1, h2, h3, h4 {
-  font-family: "Sora", system-ui, sans-serif;
+@keyframes subtleCardMotion {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.012);
+  }
+}
+
+.hero-motion-img {
+  animation: gentleDrift 6s ease-in-out infinite;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: zoom-in;
+}
+
+.hero-motion-img.is-zoomed {
+  animation: none;
+  transform: scale(1.12);
+  cursor: zoom-out;
+  z-index: 20;
+}
+
+.live-motion-img {
+  animation: subtleCardMotion 7s ease-in-out infinite;
+  transition: transform 0.35s ease;
+}
+
+.live-motion-img:hover {
+  animation-play-state: paused;
+  transform: scale(1.04);
 }

@@ -2,8 +2,17 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CheckCircle2, Clock, Headphones, ShieldCheck, ArrowRight } from "lucide-react";
 
+const FALLBACK_MEDIA =
+  "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80";
+
 export default function Services() {
   const [selectedService, setSelectedService] = useState("Website Development");
+
+  const handleImgError = (e) => {
+    if (e.currentTarget.src !== FALLBACK_MEDIA) {
+      e.currentTarget.src = FALLBACK_MEDIA;
+    }
+  };
 
   const serviceList = [
     {
@@ -13,7 +22,7 @@ export default function Services() {
     },
     {
       name: "Social Media Marketing",
-      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+      img: "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=900&q=80",
       advantage: "Audience-focused ad planning and clear campaign tracking.",
     },
     {
@@ -38,7 +47,7 @@ export default function Services() {
     },
     {
       name: "Video Editing",
-      img: "https://images.unsplash.com/photo-1574717024653-61fd2323656d?auto=format&fit=crop&w=900&q=80",
+      img: "https://images.unsplash.com/photo-1574717024653-61fd3113ff6d?auto=format&fit=crop&w=900&q=80",
       advantage: "Clean cuts, captions, and social-ready video formats.",
     },
     {
@@ -54,8 +63,7 @@ export default function Services() {
   ];
 
   return (
-    <div className="pt-20 bg-[#E6F2FF] text-[#051836] min-h-screen">
-      {/* Dark Navy Top Header */}
+    <div className="pt-20 bg-[#DCEEFF] text-[#051836] min-h-screen">
       <section className="py-16 bg-gradient-to-r from-[#051836] via-[#082A5E] to-[#0B428A] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-5xl font-extrabold">Our 9 Services</h1>
@@ -66,7 +74,6 @@ export default function Services() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-12">
-        {/* Light Blue Quotes Box */}
         <div className="bg-[#CFE6FF] border border-blue-300 rounded-2xl p-6 sm:p-8 shadow-sm">
           <div className="grid md:grid-cols-3 gap-5 mb-5">
             <div className="flex items-start gap-3">
@@ -93,7 +100,6 @@ export default function Services() {
           </p>
         </div>
 
-        {/* All 9 Services Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {serviceList.map((item) => (
             <div
@@ -101,7 +107,14 @@ export default function Services() {
               className="bg-white rounded-2xl border border-blue-200 overflow-hidden shadow-sm flex flex-col justify-between"
             >
               <div>
-                <img src={item.img} alt={item.name} className="w-full h-44 object-cover" />
+                <div className="overflow-hidden">
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    onError={handleImgError}
+                    className="w-full h-44 object-cover live-motion-img"
+                  />
+                </div>
                 <div className="p-6">
                   <h2 className="text-xl font-extrabold text-[#051836] mb-2">{item.name}</h2>
                   <p className="text-sm text-slate-700 flex items-start gap-2">
@@ -123,31 +136,54 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Select Service Quick Box with All 9 Services */}
-        <div className="bg-gradient-to-r from-[#051836] to-[#0B428A] text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div>
-            <label htmlFor="serviceSelect" className="block text-xs uppercase tracking-wider text-sky-300 font-bold mb-1.5">
-              Select Service (All 9)
-            </label>
-            <select
-              id="serviceSelect"
-              value={selectedService}
-              onChange={(e) => setSelectedService(e.target.value)}
-              className="px-4 py-2.5 rounded-xl bg-[#07214A] border border-sky-300/30 text-white text-sm font-bold focus:outline-none"
+        <div className="space-y-6">
+          <div className="bg-gradient-to-r from-[#051836] to-[#0B428A] text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div>
+              <label
+                htmlFor="serviceSelect"
+                className="block text-xs uppercase tracking-wider text-sky-300 font-bold mb-1.5"
+              >
+                Select Service (All 9)
+              </label>
+              <select
+                id="serviceSelect"
+                value={selectedService}
+                onChange={(e) => setSelectedService(e.target.value)}
+                className="px-4 py-2.5 rounded-xl bg-[#07214A] border border-sky-300/30 text-white text-sm font-bold focus:outline-none"
+              >
+                {serviceList.map((s) => (
+                  <option key={s.name} value={s.name}>
+                    {s.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <Link
+              to="/contact"
+              className="px-6 py-3 rounded-full bg-sky-400 hover:bg-sky-300 text-[#051836] font-extrabold text-sm transition"
             >
-              {serviceList.map((s) => (
-                <option key={s.name} value={s.name}>
-                  {s.name}
-                </option>
-              ))}
-            </select>
+              Continue With {selectedService}
+            </Link>
           </div>
-          <Link
-            to="/contact"
-            className="px-6 py-3 rounded-full bg-sky-400 hover:bg-sky-300 text-[#051836] font-extrabold text-sm transition"
-          >
-            Continue With {selectedService}
-          </Link>
+
+          <div className="bg-white rounded-2xl border border-blue-200 p-6 sm:p-8 grid md:grid-cols-12 gap-6 items-center shadow-sm">
+            <div className="md:col-span-5 overflow-hidden rounded-xl">
+              <img
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80"
+                alt="Handshake and Project Discussion"
+                onError={handleImgError}
+                className="w-full h-56 object-cover rounded-xl live-motion-img"
+              />
+            </div>
+            <div className="md:col-span-7">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-[#051836] mb-2">
+                Let’s Discuss Your Project Details
+              </h3>
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+                Once you pick a service above and reach out to our team, we can discuss your timeline, goals, and additional advantages together.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

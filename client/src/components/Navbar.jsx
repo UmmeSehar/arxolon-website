@@ -1,9 +1,18 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { Menu, X, MessageCircle, ArrowRight } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 35);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -13,15 +22,22 @@ export default function Navbar() {
     { name: "Contact", path: "/contact" },
   ];
 
+  // Top par bright blue hero ke saath transparent blue, scroll par frosted-glass blur
+  const headerStyle = scrolled
+    ? "bg-white/75 backdrop-blur-xl shadow-lg border-b border-slate-200/70 py-2.5 text-arxDark"
+    : isHome
+    ? "bg-[#0B5ED7]/90 backdrop-blur-md border-b border-white/15 py-3.5 text-white"
+    : "bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 text-arxDark";
+
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Brand Logo */}
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerStyle}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        {/* Bara aur Clear Logo */}
         <Link to="/" className="flex items-center shrink-0">
           <img
             src="/logo.png"
             alt="Arxolon Technologies"
-            className="h-11 sm:h-13 w-auto object-contain"
+            className="h-14 sm:h-16 md:h-[72px] w-auto object-contain transition-transform duration-300 hover:scale-105"
           />
         </Link>
 
@@ -32,10 +48,14 @@ export default function Navbar() {
               key={item.path}
               to={item.path}
               className={({ isActive }) =>
-                `text-[15px] font-semibold transition-colors ${
-                  isActive
-                    ? "text-arxBlue"
-                    : "text-arxDark hover:text-arxBlue"
+                `text-[15px] font-bold transition-colors ${
+                  scrolled || !isHome
+                    ? isActive
+                      ? "text-[#0B5ED7]"
+                      : "text-arxDark hover:text-[#0B5ED7]"
+                    : isActive
+                    ? "text-cyan-200 underline underline-offset-8 decoration-2"
+                    : "text-white hover:text-cyan-200"
                 }`
               }
             >
@@ -44,64 +64,52 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop Action Buttons */}
-        <div className="hidden lg:flex items-center gap-3">
-          <a
-            href="https://wa.me/923241282633?text=Hi%20Arxolon%20Technologies!%20I%20want%20to%20discuss%20a%20project."
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-emerald-500 text-emerald-700 hover:bg-emerald-50 text-sm font-bold transition"
-          >
-            <MessageCircle className="w-4 h-4" /> WhatsApp
-          </a>
+        {/* Right CTA Button */}
+        <div className="hidden lg:flex items-center">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-arxCyan to-arxBlue text-arxDark font-bold text-sm shadow-md shadow-cyan-500/20 hover:opacity-95 transition"
+            className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-extrabold text-sm shadow-md transition hover:scale-105 ${
+              scrolled || !isHome
+                ? "bg-gradient-to-r from-[#00C6FF] to-[#0072FF] text-white"
+                : "bg-white text-[#073B8C] hover:bg-cyan-50"
+            }`}
           >
             Get a Free Quote <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Hamburger */}
         <button
           onClick={() => setOpen(!open)}
           aria-label="Toggle Menu"
-          className="lg:hidden p-2 rounded-lg text-arxDark hover:bg-slate-100"
+          className={`lg:hidden p-2 rounded-xl ${
+            scrolled || !isHome ? "text-arxDark hover:bg-slate-100" : "text-white hover:bg-white/15"
+          }`}
         >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {open ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </button>
       </div>
 
-      {/* Mobile Dropdown Drawer */}
+      {/* Mobile Drawer */}
       {open && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-5 py-5 space-y-3 shadow-xl">
+        <div className="lg:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200 px-6 py-6 space-y-4 shadow-2xl text-arxDark">
           {navLinks.map((item) => (
             <Link
               key={item.path}
               to={item.path}
               onClick={() => setOpen(false)}
-              className="block py-2 text-base font-semibold text-arxDark hover:text-arxBlue"
+              className="block py-2 text-base font-bold hover:text-[#0B5ED7]"
             >
               {item.name}
             </Link>
           ))}
-          <div className="pt-3 flex flex-col gap-3">
-            <a
-              href="https://wa.me/923241282633?text=Hi%20Arxolon%20Technologies!%20I%20want%20to%20discuss%20a%20project."
-              target="_blank"
-              rel="noreferrer"
-              className="w-full text-center py-3 rounded-full border border-emerald-500 text-emerald-700 font-bold text-sm"
-            >
-              Chat on WhatsApp
-            </a>
-            <Link
-              to="/contact"
-              onClick={() => setOpen(false)}
-              className="w-full text-center py-3 rounded-full bg-gradient-to-r from-arxCyan to-arxBlue text-arxDark font-bold text-sm"
-            >
-              Get a Free Quote
-            </Link>
-          </div>
+          <Link
+            to="/contact"
+            onClick={() => setOpen(false)}
+            className="block w-full text-center py-3.5 rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0072FF] text-white font-extrabold text-sm"
+          >
+            Get a Free Quote
+          </Link>
         </div>
       )}
     </header>

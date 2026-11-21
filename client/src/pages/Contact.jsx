@@ -87,7 +87,7 @@ export default function Contact() {
                 <div>
                   <p className="text-xs font-bold uppercase text-slate-500">Email Address</p>
                   <a href="mailto:info.arxolon1@gmail.com" className="text-base font-bold text-arxDark hover:text-arxBlue">
-                    info.arxolon1@gmail.com
+                    info.arxolontech@gmail.com
                   </a>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default function Contact() {
                 <MapPin className="w-5 h-5 text-arxBlue shrink-0 mt-1" />
                 <div>
                   <p className="text-xs font-bold uppercase text-slate-500">Office Location</p>
-                  <p className="text-base font-bold text-arxDark">Lahore, Model Town Link Road</p>
+                  <p className="text-base font-bold text-arxDark">Model Town Link Road, Lahore, Pakistan</p>
                 </div>
               </div>
 

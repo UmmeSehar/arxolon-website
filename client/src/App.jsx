@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppFloat from "./components/WhatsAppFloat";
+import LeftSocialBar from "./components/LeftSocialBar";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
@@ -23,6 +24,7 @@ export default function App() {
       <ScrollToTop />
       <div className="flex flex-col min-h-screen font-sans text-slate-800 bg-white">
         <Navbar />
+        <LeftSocialBar />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />

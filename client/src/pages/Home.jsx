@@ -2,417 +2,559 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Globe,
-  TrendingUp,
+  Layout,
+  Smartphone,
+  Megaphone,
+  Share2,
   Palette,
   Video,
-  Share2,
+  Award,
+  FileText,
   CheckCircle2,
   ArrowRight,
   Plus,
   Minus,
   Sparkles,
-  MessageCircle,
+  Clock,
+  ShieldCheck,
+  HeartHandshake,
+  Star,
 } from "lucide-react";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0);
   const [openFaq, setOpenFaq] = useState(0);
 
-  const servicesData = [
+  const featuredTabs = [
     {
-      name: "Website Development",
-      icon: <Globe className="w-5 h-5" />,
-      title: "Modern Websites That Win Customers",
-      subtitle:
-        "We build fast, mobile-friendly websites and online stores that look professional on every phone, tablet, and computer.",
-      points: [
+      label: "Website Development",
+      title: "Website Development & Design",
+      desc: "We build fast, mobile-friendly websites and online stores that look clean on every phone and computer. Even if you have zero technical experience, we make your website easy to manage and ready to bring in customers.",
+      bullets: [
         "Business & Company Websites",
-        "Online Stores (E-Commerce)",
-        "WordPress & Custom Websites",
-        "Fast Loading & Mobile Ready",
-        "Easy Admin Panel for You",
-        "Full Maintenance & Support",
+        "Online Shopping Stores",
+        "Modern Mobile-Ready Design",
+        "Easy Admin Panel",
+        "Fast Page Loading",
+        "Ongoing Updates & Support",
       ],
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80",
-      badge: "Mobile & Desktop Responsive",
     },
     {
-      name: "Digital Marketing",
-      icon: <TrendingUp className="w-5 h-5" />,
-      title: "Bring More Buyers to Your Business",
-      subtitle:
-        "Stop wasting money on guesswork. We run targeted Facebook, Instagram, and Google ads that bring real customer calls and messages.",
-      points: [
-        "Facebook & Instagram Ads",
-        "Google Search Ads & Ranking",
-        "Local Business Promotion",
-        "Lead Generation Campaigns",
-        "Clear Weekly Results Report",
-        "Budget-Friendly Ad Plans",
+      label: "Mobile App Development",
+      title: "Mobile App Development",
+      desc: "Turn your business idea into a smooth Android and iOS mobile app. We design simple, attractive app screens that your customers can use effortlessly on their phones.",
+      bullets: [
+        "Android & iOS Apps",
+        "Service Booking Apps",
+        "E-Commerce Shopping Apps",
+        "Clean & Simple User Screens",
+        "Push Notifications",
+        "Complete Testing & Launch",
       ],
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80",
-      badge: "Daily Customer Leads",
     },
     {
-      name: "Graphic Designing",
-      icon: <Palette className="w-5 h-5" />,
-      title: "Eye-Catching Designs That Build Trust",
-      subtitle:
-        "People judge your business in 3 seconds by how it looks. We create clean logos, posters, and brand kits that make you stand out.",
-      points: [
-        "Professional Logo Design",
-        "Business Cards & Letterheads",
+      label: "Graphic & Logo Design",
+      title: "Graphic Designing & Brand Logos",
+      desc: "People judge your brand in seconds by how it looks. Our creative designers craft memorable logos, social media posts, brochures, and packaging that make your business stand out.",
+      bullets: [
+        "Custom Logo Design",
         "Social Media Post Designs",
-        "Flyers, Brochures & Banners",
-        "Product Packaging Design",
+        "Packaging & Label Design",
+        "Brochures & Catalogs",
+        "Business Cards & Stationery",
         "Complete Brand Style Kit",
       ],
-      image:
-        "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1000&q=80",
-      badge: "100% Custom Branding",
     },
     {
-      name: "Video Editing",
-      icon: <Video className="w-5 h-5" />,
-      title: "Scroll-Stopping Reels & Promo Videos",
-      subtitle:
-        "Video gets 3x more attention online. Send us your raw clips and we turn them into crisp, engaging ads, Reels, and YouTube videos.",
-      points: [
-        "Instagram Reels & TikTok Edits",
+      label: "Video Editing",
+      title: "Video Editing & Social Reels",
+      desc: "Short videos get the highest attention online. Send us your raw clips and we turn them into scroll-stopping Instagram Reels, TikToks, and promotional video ads.",
+      bullets: [
+        "Instagram Reels & TikToks",
         "Facebook & YouTube Video Ads",
-        "Captions, Subtitles & Effects",
-        "Product Showcase Videos",
-        "Clean Sound & Color Polish",
+        "Bold Captions & Subtitles",
+        "Smooth Transitions & Effects",
+        "Clean Audio & Color Polish",
         "Fast Turnaround Delivery",
       ],
-      image:
-        "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1000&q=80",
-      badge: "High-Retention Edits",
     },
     {
-      name: "Social Accounts Management",
-      icon: <Share2 className="w-5 h-5" />,
-      title: "We Handle Your Social Pages Daily",
-      subtitle:
-        "Too busy running your business? Our team plans, designs, writes, and posts content on your social accounts every single week.",
-      points: [
-        "Instagram & Facebook Handling",
-        "LinkedIn & TikTok Page Growth",
+      label: "Social Media Growth",
+      title: "Social Marketing & Account Handling",
+      desc: "Too busy running your business? We handle your Instagram, Facebook, and LinkedIn pages daily—and run targeted ads that bring real customer messages and sales.",
+      bullets: [
+        "Daily Page Management",
+        "Facebook & Instagram Ads",
         "Monthly Content Calendar",
         "Engaging Captions & Hashtags",
-        "Regular Posting Schedule",
-        "Monthly Follower & Reach Report",
+        "Audience & Reach Growth",
+        "Weekly Progress Updates",
       ],
-      image:
-        "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1000&q=80",
-      badge: "Done-For-You Growth",
+    },
+  ];
+
+  const nineServices = [
+    {
+      icon: <Globe className="w-7 h-7 text-[#0B5ED7]" />,
+      title: "Website Development",
+      desc: "Fast, secure, and mobile-ready business websites and online stores built to turn visitors into loyal customers.",
+    },
+    {
+      icon: <Layout className="w-7 h-7 text-[#0B5ED7]" />,
+      title: "Website Designing",
+      desc: "Clean, modern layouts and easy-to-navigate page designs that make your business look trusted right away.",
+    },
+    {
+      icon: <Smartphone className="w-7 h-7 text-[#0B5ED7]" />,
+      title: "Mobile App Development",
+      desc: "Smooth Android and iOS mobile applications tailored to your business so customers stay connected anywhere.",
+    },
+    {
+      icon: <Megaphone className="w-7 h-7 text-[#0B5ED7]" />,
+      title: "Social Media Marketing",
+      desc: "Targeted Facebook and Instagram ad campaigns designed to bring daily customer inquiries, calls, and sales.",
+    },
+    {
+      icon: <Share2 className="w-7 h-7 text-[#0B5ED7]" />,
+      title: "Social Accounts Management",
+      desc: "Complete daily handling of your Instagram, Facebook, and LinkedIn pages—planning, posting, and growing your brand.",
+    },
+    {
+      icon: <Palette className="w-7 h-7 text-[#0B5ED7]" />,
+      title: "Graphic Designing",
+      desc: "Eye-catching social media posts, flyers, brochures, banners, and print designs crafted to grab attention.",
+    },
+    {
+      icon: <Video className="w-7 h-7 text-[#0B5ED7]" />,
+      title: "Video Editing",
+      desc: "Scroll-stopping Instagram Reels, TikTok videos, and promo ads with crisp sound, captions, and clean edits.",
+    },
+    {
+      icon: <Award className="w-7 h-7 text-[#0B5ED7]" />,
+      title: "Logo & Brand Identity",
+      desc: "Memorable custom logos, brand colors, and visual kits that give your business a distinct, professional look.",
+    },
+    {
+      icon: <FileText className="w-7 h-7 text-[#0B5ED7]" />,
+      title: "Content & Blog Writing",
+      desc: "Clear, persuasive website text, product descriptions, and informative articles written in simple, engaging words.",
     },
   ];
 
   const steps = [
     {
       num: "01",
-      title: "Tell Us Your Idea",
-      desc: "Message us on WhatsApp or fill out our short form with what your business needs.",
+      title: "Share Your Idea",
+      desc: "Tell us what your business needs in plain, everyday words—no tech background required.",
     },
     {
       num: "02",
-      title: "We Make a Clear Plan",
-      desc: "We suggest the best website, design, or marketing plan in simple language.",
+      title: "Clear Action Plan",
+      desc: "We prepare an honest timeline, transparent pricing, and creative plan tailored to you.",
     },
     {
       num: "03",
-      title: "Get Quote & Timeline",
-      desc: "You receive an honest price and exact delivery date with zero hidden charges.",
+      title: "Design & Build",
+      desc: "Our designers, developers, and editors craft your project with regular previews.",
     },
     {
       num: "04",
-      title: "We Design & Build",
-      desc: "Our team creates your project and shares regular updates so you stay in control.",
+      title: "Review & Polish",
+      desc: "We refine every visual and detail until you are 100% happy with how everything looks.",
     },
     {
       num: "05",
       title: "Launch & Grow",
-      desc: "We check every detail, launch your project live, and support you as you grow.",
+      desc: "Your website, app, or campaign goes live with reliable ongoing support from our team.",
     },
   ];
 
   const faqs = [
     {
-      q: "I don't know much about websites or IT. Will you guide me?",
-      a: "Yes, 100%. We explain everything in simple, everyday language and handle all the technical setup for you from start to finish.",
+      q: "I don't know much about IT or websites. Will you guide me?",
+      a: "Yes, 100%! We explain everything in simple, everyday language and handle all the design, coding, and setup for you.",
     },
     {
-      q: "Will my website work properly on mobile phones?",
-      a: "Yes. Every website we build is tested on iPhones, Android phones, tablets, and laptops so nothing ever looks broken or overlapping.",
+      q: "Will my website look proper on mobile phones and tablets?",
+      a: "Yes. Every website we design and build is tested across iPhones, Android phones, tablets, and laptops so nothing ever overlaps or looks broken.",
     },
     {
-      q: "Can I hire you for monthly social media and video editing?",
-      a: "Yes! Many of our clients choose monthly packages where we handle their graphic posts, video reels, and social media accounts every week.",
+      q: "Can you manage our social accounts and edit videos every month?",
+      a: "Yes! Many business owners choose our monthly plans where we create graphic posts, edit Reels/videos, and manage their social pages weekly.",
     },
     {
-      q: "How long does it take to build a complete website?",
-      a: "Most business websites are designed, tested, and ready to launch within 7 to 14 days depending on your pages and features.",
+      q: "How long does it take to complete a website or branding kit?",
+      a: "Logos and graphic kits take 2 to 4 days, while complete business websites are usually designed, tested, and launched within 7 to 14 days.",
+    },
+    {
+      q: "Do you provide support after the project is delivered?",
+      a: "Yes, our Lahore team stays available on WhatsApp and email whenever you need updates, edits, or marketing help.",
     },
   ];
 
-  const currentService = servicesData[activeTab];
+  const currentTab = featuredTabs[activeTab];
 
   return (
     <div>
-      {/* HERO SECTION */}
-      <section className="bg-arxDark text-white pt-16 pb-24 lg:pt-24 lg:pb-28 relative overflow-hidden">
-        {/* Subtle Tech Grid & Glow */}
-        <div
-          className="absolute inset-0 opacity-20 pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 80% 20%, #14D6F2 0%, transparent 45%), linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
-            backgroundSize: "100% 100%, 48px 48px, 48px 48px",
-          }}
-        />
+      {/* 1. BRIGHT BLUE HERO SECTION (Arfa Technologies Scale + Bright Royal/Cyan Blue) */}
+      <section className="bg-gradient-to-br from-[#073B8C] via-[#0B5ED7] to-[#0099FF] text-white min-h-[92vh] flex items-center pt-32 pb-24 lg:pt-36 lg:pb-28 relative overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-[460px] h-[460px] bg-cyan-300/25 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-950/30 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
-          {/* Left Copy */}
           <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-cyan-400/30 text-arxCyan text-xs sm:text-sm font-semibold mb-6">
-              <Sparkles className="w-4 h-4" /> Your All-in-One Digital Growth Partner
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 border border-white/30 text-white text-xs sm:text-sm font-bold mb-6">
+              <Sparkles className="w-4 h-4 text-cyan-200" /> Creative Digital & Tech Agency
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-[58px] font-extrabold leading-[1.12] tracking-tight text-white">
-              We build websites and brands that{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-arxCyan to-arxBlue">
-                bring in customers.
-              </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-extrabold leading-[1.08] tracking-tight text-white">
+              Creative Digital Agency That{" "}
+              <span className="text-cyan-200">Grows Your Business.</span>
             </h1>
-            <p className="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
-              From modern websites and eye-catching graphic design to video editing, social media management, and digital ads—Arxolon Technologies helps your business look trusted and grow faster.
+            <p className="mt-6 text-base sm:text-xl text-blue-50 leading-relaxed max-w-2xl">
+              We build modern websites and mobile apps, design standout logos, edit engaging videos, and manage your social media—all in simple, stress-free steps.
             </p>
 
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link
+                to="/services"
+                className="px-8 py-4 rounded-full bg-white text-[#073B8C] hover:bg-cyan-50 font-extrabold text-base shadow-xl transition hover:scale-105"
+              >
+                Our Services
+              </Link>
               <Link
                 to="/contact"
-                className="px-7 py-4 rounded-full bg-gradient-to-r from-arxCyan to-arxBlue text-arxDark font-bold text-base shadow-lg shadow-cyan-500/25 hover:scale-[1.02] transition inline-flex items-center gap-2"
+                className="px-8 py-4 rounded-full border-2 border-white text-white hover:bg-white/15 font-extrabold text-base transition"
               >
-                Get a Free Quote <ArrowRight className="w-5 h-5" />
+                Get a Free Quote
               </Link>
-              <a
-                href="https://wa.me/923241282633?text=Hi%20Arxolon%20Technologies!%20I%20want%20to%20start%20a%20project."
-                target="_blank"
-                rel="noreferrer"
-                className="px-7 py-4 rounded-full border border-white/25 hover:bg-white/10 text-white font-semibold text-base transition inline-flex items-center gap-2"
-              >
-                <MessageCircle className="w-5 h-5 text-emerald-400" /> WhatsApp Us
-              </a>
             </div>
           </div>
 
-          {/* Right Animated Agency Visual Showcase */}
+          {/* Right Animated Device & Creative Showcase */}
           <div className="lg:col-span-5">
-            <div className="relative animate-floatSlow">
-              <div className="rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-arxNavy">
-                <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80"
-                  alt="Arxolon Technologies Creative Team"
-                  className="w-full h-64 sm:h-72 object-cover"
-                />
-                <div className="p-6 bg-arxNavy">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-bold uppercase tracking-wider text-arxCyan">
-                      Complete Digital Solutions
-                    </span>
-                    <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold">
-                      24h Fast Response
-                    </span>
-                  </div>
-                  <p className="text-white font-bold text-lg">
-                    Websites • Design • Video • Social Growth
-                  </p>
-                  <p className="text-slate-300 text-sm mt-1">
-                    Everything your business needs under one roof in Lahore & worldwide.
-                  </p>
-                </div>
-              </div>
+            <div className="animate-floatSlow bg-white/12 backdrop-blur-lg border border-white/25 rounded-3xl p-6 sm:p-8 shadow-2xl">
+              <svg viewBox="0 0 420 330" className="w-full h-auto" fill="none">
+                <circle cx="210" cy="165" r="140" fill="#FFFFFF" fillOpacity="0.1" />
+                {/* Laptop Screen */}
+                <rect x="45" y="38" width="330" height="205" rx="18" fill="#051E47" stroke="#7DD3FC" strokeWidth="3" />
+                <circle cx="70" cy="60" r="5" fill="#FF5F56" />
+                <circle cx="88" cy="60" r="5" fill="#FFBD2E" />
+                <circle cx="106" cy="60" r="5" fill="#27C93F" />
+                <line x1="45" y1="78" x2="375" y2="78" stroke="#1E40AF" strokeWidth="2" />
+
+                {/* Bright Visual Blocks inside Laptop */}
+                <rect x="68" y="96" width="150" height="92" rx="14" fill="url(#brightBlueGrad)" />
+                <path d="M128 126L158 142L128 158V126Z" fill="#FFFFFF" />
+                <rect x="68" y="202" width="120" height="10" rx="5" fill="#38BDF8" />
+                <rect x="68" y="220" width="85" height="8" rx="4" fill="#93C5FD" fillOpacity="0.6" />
+
+                {/* Stats & Creative Cards */}
+                <rect x="234" y="96" width="118" height="58" rx="12" fill="#0F346E" />
+                <rect x="248" y="113" width="60" height="9" rx="4.5" fill="#38BDF8" />
+                <rect x="248" y="130" width="88" height="8" rx="4" fill="#FFFFFF" fillOpacity="0.65" />
+
+                <rect x="234" y="166" width="118" height="64" rx="12" fill="#0F346E" />
+                <rect x="250" y="200" width="14" height="20" rx="4" fill="#38BDF8" />
+                <rect x="274" y="188" width="14" height="32" rx="4" fill="#60A5FA" />
+                <rect x="298" y="178" width="14" height="42" rx="4" fill="#22D3EE" />
+                <rect x="322" y="172" width="14" height="48" rx="4" fill="#34D399" />
+
+                {/* Floating Pill */}
+                <rect x="95" y="260" width="230" height="42" rx="21" fill="#FFFFFF" />
+                <circle cx="122" cy="281" r="10" fill="#10B981" />
+                <text x="142" y="286" fill="#073B8C" fontSize="13" fontWeight="800" fontFamily="sans-serif">
+                  Web • Apps • Design • Video
+                </text>
+
+                <defs>
+                  <linearGradient id="brightBlueGrad" x1="68" y1="96" x2="218" y2="188" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#00C6FF" />
+                    <stop offset="1" stopColor="#0072FF" />
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
           </div>
         </div>
       </section>
 
-      {/* TRUST STRIP */}
-      <section className="bg-arxSurface border-b border-slate-200/80 py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div>
-            <p className="text-3xl sm:text-4xl font-extrabold text-arxDark font-heading">5-in-1</p>
-            <p className="text-sm text-slate-600 font-medium mt-1">Complete Digital Services</p>
-          </div>
-          <div>
-            <p className="text-3xl sm:text-4xl font-extrabold text-arxDark font-heading">100%</p>
-            <p className="text-sm text-slate-600 font-medium mt-1">Mobile & Tablet Responsive</p>
-          </div>
-          <div>
-            <p className="text-3xl sm:text-4xl font-extrabold text-arxDark font-heading">Fast</p>
-            <p className="text-sm text-slate-600 font-medium mt-1">On-Time Project Delivery</p>
-          </div>
-          <div>
-            <p className="text-3xl sm:text-4xl font-extrabold text-arxDark font-heading">24h</p>
-            <p className="text-sm text-slate-600 font-medium mt-1">Quick Support Reply</p>
-          </div>
-        </div>
-      </section>
-
-      {/* INTERACTIVE SERVICES TABS SECTION */}
-      <section className="py-20 lg:py-24 bg-white">
+      {/* 2. INTERACTIVE SERVICE TABS WITH CARTOON ILLUSTRATION (Arfa Style) */}
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-10">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-arxBlue">
-              What We Do
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-arxDark mt-2">
-              Everything your business needs to shine online.
-            </h2>
-            <p className="text-slate-600 mt-3 text-base sm:text-lg">
-              Click any service below to see how we help your brand look professional and attract more clients.
-            </p>
-          </div>
-
-          {/* Pill Tab Buttons */}
-          <div className="flex flex-wrap gap-2.5 sm:gap-3 mb-10">
-            {servicesData.map((srv, idx) => (
+          {/* Tab Strip */}
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 border-b border-slate-200 pb-4 mb-14">
+            {featuredTabs.map((tab, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveTab(idx)}
-                className={`inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-bold transition-all ${
+                className={`px-5 py-3 rounded-full text-sm sm:text-base font-extrabold transition-all ${
                   activeTab === idx
-                    ? "bg-arxDark text-white shadow-lg"
-                    : "bg-arxSurface text-slate-700 hover:bg-slate-200/70 border border-slate-200"
+                    ? "bg-[#0B5ED7] text-white shadow-lg shadow-blue-500/25"
+                    : "text-slate-600 hover:text-[#0B5ED7] hover:bg-blue-50"
                 }`}
               >
-                {srv.icon}
-                <span>{srv.name}</span>
+                {tab.label}
               </button>
             ))}
           </div>
 
-          {/* Active Service Showcase Card */}
-          <div className="bg-arxSurface border border-slate-200/80 rounded-3xl p-6 sm:p-10 lg:p-12 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Active Tab Content + Cartoon Designer Vector Illustration */}
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-cyan-100 text-arxDark text-xs font-bold mb-4">
-                {currentService.badge}
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-arxDark mb-4">
-                {currentService.title}
-              </h3>
-              <p className="text-slate-600 text-base leading-relaxed mb-6">
-                {currentService.subtitle}
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-arxDark mb-5">
+                {currentTab.title}
+              </h2>
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8">
+                {currentTab.desc}
               </p>
 
-              <ul className="grid sm:grid-cols-2 gap-3 mb-8">
-                {currentService.points.map((pt, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-sm font-semibold text-arxDark">
-                    <CheckCircle2 className="w-5 h-5 text-arxBlue shrink-0 mt-0.5" />
-                    <span>{pt}</span>
-                  </li>
+              <div className="grid sm:grid-cols-2 gap-3.5 mb-9">
+                {currentTab.bullets.map((b, i) => (
+                  <div key={i} className="flex items-center gap-2.5 text-sm sm:text-base font-bold text-arxDark">
+                    <CheckCircle2 className="w-5 h-5 text-[#0B5ED7] shrink-0" />
+                    <span>{b}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-4">
                 <Link
                   to="/contact"
-                  className="px-6 py-3.5 rounded-full bg-gradient-to-r from-arxCyan to-arxBlue text-arxDark font-bold text-sm shadow-md hover:opacity-95 transition"
+                  className="px-7 py-3.5 rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0072FF] text-white font-extrabold text-sm shadow-lg hover:opacity-95 transition"
                 >
-                  Request a Quote
+                  Get a Quote
                 </Link>
                 <Link
                   to="/services"
-                  className="px-6 py-3.5 rounded-full border border-slate-300 text-arxDark hover:bg-white font-bold text-sm transition"
+                  className="px-7 py-3.5 rounded-full bg-blue-50 text-[#0B5ED7] hover:bg-blue-100 font-extrabold text-sm transition"
                 >
-                  See All Services
+                  See All 9 Services →
                 </Link>
               </div>
             </div>
 
-            <div className="lg:col-span-6">
-              <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-white">
-                <img
-                  src={currentService.image}
-                  alt={currentService.name}
-                  className="w-full h-64 sm:h-80 object-cover transition-all duration-500"
-                />
+            {/* Right Clean Cartoon / Vector Desk Illustration */}
+            <div className="lg:col-span-6 flex justify-center">
+              <div className="w-full max-w-lg bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 border border-blue-100 shadow-sm">
+                <svg viewBox="0 0 460 340" className="w-full h-auto" fill="none">
+                  {/* Floating Creative Cards */}
+                  <rect x="40" y="30" width="95" height="65" rx="12" fill="#FFFFFF" stroke="#0B5ED7" strokeWidth="2.5" />
+                  <circle cx="87" cy="56" r="14" fill="#38BDF8" fillOpacity="0.3" />
+                  <path d="M87 47V65M78 56H96" stroke="#0B5ED7" strokeWidth="2.5" strokeLinecap="round" />
+
+                  <rect x="325" y="35" width="95" height="65" rx="12" fill="#FFFFFF" stroke="#00C6FF" strokeWidth="2.5" />
+                  <rect x="342" y="52" width="60" height="10" rx="5" fill="#0B5ED7" />
+                  <rect x="342" y="70" width="42" height="8" rx="4" fill="#93C5FD" />
+
+                  {/* Monitor Screen */}
+                  <rect x="145" y="45" width="170" height="115" rx="14" fill="#073B8C" />
+                  <rect x="158" y="58" width="144" height="85" rx="8" fill="#FFFFFF" />
+                  <circle cx="230" cy="95" r="22" fill="#38BDF8" fillOpacity="0.35" />
+                  <path d="M224 95L229 100L238 89" stroke="#0B5ED7" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <rect x="215" y="160" width="30" height="25" fill="#0B5ED7" />
+                  <rect x="190" y="182" width="80" height="8" rx="4" fill="#073B8C" />
+
+                  {/* Desk Line */}
+                  <rect x="55" y="190" width="350" height="14" rx="7" fill="#073B8C" />
+                  <rect x="85" y="204" width="14" height="105" rx="5" fill="#0B5ED7" />
+                  <rect x="361" y="204" width="14" height="105" rx="5" fill="#0B5ED7" />
+
+                  {/* Stylized Designer Character */}
+                  <circle cx="230" cy="132" r="22" fill="#FDBA74" />
+                  <path d="M208 128C208 113 252 113 252 128" fill="#051324" />
+                  <path d="M188 190C188 164 272 164 272 190" fill="#00C6FF" />
+
+                  {/* Chair */}
+                  <rect x="192" y="232" width="76" height="12" rx="6" fill="#051324" />
+                  <rect x="224" y="244" width="12" height="50" fill="#051324" />
+                  <rect x="198" y="294" width="64" height="10" rx="5" fill="#051324" />
+                </svg>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5-STEP PROCESS SECTION */}
-      <section className="py-20 lg:py-24 bg-arxDark text-white">
+      {/* 3. COMPLETE 9 SERVICES BOXES */}
+      <section className="py-20 lg:py-28 bg-arxSurface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-14">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-arxCyan">
-              Simple & Transparent
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#0B5ED7]">
+              Complete Digital Solutions
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2">
-              How we work with you
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-arxDark mt-2">
+              All 9 Services We Provide
             </h2>
-            <p className="text-slate-300 mt-3 text-base sm:text-lg">
-              No confusion, no technical headaches. Just 5 clear steps from your first message to launch.
+            <p className="text-slate-600 mt-4 text-base sm:text-lg">
+              Clear, easy-to-understand services crafted to build your brand, attract customers, and grow your business online.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {steps.map((step, i) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+            {nineServices.map((srv, idx) => (
               <div
-                key={i}
-                className="border-t-2 border-arxCyan pt-5 bg-arxNavy/50 p-5 rounded-b-2xl"
+                key={idx}
+                className="group bg-white border border-slate-200/80 hover:border-[#0B5ED7] rounded-3xl p-8 transition-all duration-300 hover:shadow-xl flex flex-col justify-between"
               >
-                <span className="text-2xl font-extrabold text-arxCyan font-heading block mb-2">
-                  {step.num}
-                </span>
-                <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
-                <p className="text-sm text-slate-300 leading-relaxed">{step.desc}</p>
+                <div>
+                  <div className="w-14 h-14 rounded-2xl bg-blue-50 group-hover:bg-blue-100 flex items-center justify-center mb-6 transition">
+                    {srv.icon}
+                  </div>
+                  <h3 className="text-xl font-extrabold text-arxDark mb-3">
+                    {srv.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                    {srv.desc}
+                  </p>
+                </div>
+
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-1.5 text-sm font-extrabold text-[#0B5ED7] group-hover:translate-x-1 transition-transform"
+                >
+                  Request This Service <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* VISION & FAQ SPLIT SECTION */}
-      <section className="py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-5">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-arxBlue">
-              Why Choose Arxolon
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-arxDark mt-2 mb-5">
-              Built for business owners, not tech experts.
+      {/* 4. PURE AESTHETIC STUDIO PICTURES (No Extra Clutter Text) */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="rounded-3xl overflow-hidden shadow-lg h-72">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80"
+              alt="Creative Team"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div className="rounded-3xl overflow-hidden shadow-lg h-72">
+            <img
+              src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=80"
+              alt="Web & Mobile Engineering"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div className="rounded-3xl overflow-hidden shadow-lg h-72">
+            <img
+              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=80"
+              alt="Brand Strategy"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 5. ARFA-STYLE "LET'S BUILD SOMETHING TOGETHER" ILLUSTRATION SECTION */}
+      <section className="py-20 lg:py-24 bg-arxSurface">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-6">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-arxDark leading-tight mb-5">
+              LET’S BUILD <br />
+              <span className="text-[#0B5ED7]">SOMETHING TOGETHER</span>
             </h2>
-            <p className="text-slate-600 leading-relaxed mb-4">
-              Many agencies confuse clients with complicated words. At Arxolon Technologies, we focus on what truly matters: making your business look trustworthy and bringing you real customers.
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed mb-8 max-w-xl">
+              Let’s build something extraordinary together! Our creative and technical team brings your digital ideas to life with clean designs, fast websites, engaging videos, and smart social growth.
             </p>
-            <p className="text-slate-600 leading-relaxed mb-8">
-              Whether you need a brand-new website, daily social media posts, promotional videos, or paid ads, our team handles everything smoothly.
-            </p>
-            <Link
-              to="/about"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border-2 border-arxBlue text-arxBlue hover:bg-arxBlue hover:text-white font-bold text-sm transition"
-            >
-              Learn More About Us <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                to="/contact"
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0072FF] text-white font-extrabold text-sm shadow-lg hover:opacity-95 transition"
+              >
+                Start Your Project
+              </Link>
+              <Link
+                to="/portfolio"
+                className="px-8 py-4 rounded-full border-2 border-arxDark text-arxDark hover:bg-arxDark hover:text-white font-extrabold text-sm transition"
+              >
+                View Our Work
+              </Link>
+            </div>
           </div>
 
-          <div className="lg:col-span-7 divide-y divide-slate-200 border-y border-slate-200">
+          {/* Right Cartoon Puzzle Builder Vector */}
+          <div className="lg:col-span-6 flex justify-center">
+            <div className="w-full max-w-md bg-white rounded-3xl p-8 border border-slate-200 shadow-md">
+              <svg viewBox="0 0 400 300" className="w-full h-auto" fill="none">
+                {/* Digital Wall Board */}
+                <rect x="65" y="45" width="180" height="190" rx="16" fill="#073B8C" />
+                <rect x="85" y="68" width="62" height="62" rx="10" fill="#0B5ED7" />
+                <rect x="160" y="68" width="62" height="62" rx="10" fill="#38BDF8" />
+                <rect x="85" y="145" width="62" height="62" rx="10" fill="#38BDF8" fillOpacity="0.4" />
+                {/* Missing Slot */}
+                <rect x="160" y="145" width="62" height="62" rx="10" fill="#FFFFFF" stroke="#00C6FF" strokeWidth="2.5" strokeDasharray="6 4" />
+
+                {/* Floating Bright Piece */}
+                <rect x="235" y="128" width="56" height="56" rx="12" fill="#00C6FF" />
+
+                {/* Character Placing the Piece */}
+                <circle cx="315" cy="98" r="20" fill="#FDBA74" />
+                <path d="M295 94C295 80 335 80 335 94" fill="#051324" />
+                <rect x="292" y="124" width="46" height="75" rx="14" fill="#0B5ED7" />
+                <path d="M292 142L265 152" stroke="#FDBA74" strokeWidth="10" strokeLinecap="round" />
+                <rect x="296" y="199" width="15" height="62" rx="6" fill="#051324" />
+                <rect x="319" y="199" width="15" height="62" rx="6" fill="#051324" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. 5-STEP WORKFLOW */}
+      <section className="py-20 lg:py-24 bg-gradient-to-r from-[#051E47] to-[#0B5ED7] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-14">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-cyan-200">
+              How We Work
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+              5 Simple Steps From Idea to Launch
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {steps.map((st, i) => (
+              <div
+                key={i}
+                className="border-t-2 border-cyan-300 bg-white/10 backdrop-blur-sm p-6 rounded-b-2xl"
+              >
+                <span className="text-2xl font-extrabold text-cyan-200 block mb-2">
+                  {st.num}
+                </span>
+                <h3 className="text-lg font-bold text-white mb-2">{st.title}</h3>
+                <p className="text-sm text-blue-100 leading-relaxed">{st.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. FAQ SECTION */}
+      <section className="py-20 lg:py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-[#0B5ED7]">
+              Questions & Answers
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-arxDark mt-2">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="divide-y divide-slate-200 border-y border-slate-200">
             {faqs.map((item, idx) => (
               <div key={idx} className="py-5">
                 <button
                   onClick={() => setOpenFaq(openFaq === idx ? -1 : idx)}
-                  className="w-full flex items-center justify-between gap-4 text-left font-bold text-base sm:text-lg text-arxDark hover:text-arxBlue"
+                  className="w-full flex items-center justify-between gap-4 text-left font-bold text-base sm:text-lg text-arxDark hover:text-[#0B5ED7]"
                 >
                   <span>{item.q}</span>
                   {openFaq === idx ? (
-                    <Minus className="w-5 h-5 text-arxBlue shrink-0" />
+                    <Minus className="w-5 h-5 text-[#0B5ED7] shrink-0" />
                   ) : (
-                    <Plus className="w-5 h-5 text-arxBlue shrink-0" />
+                    <Plus className="w-5 h-5 text-[#0B5ED7] shrink-0" />
                   )}
                 </button>
                 {openFaq === idx && (
@@ -422,34 +564,6 @@ export default function Home() {
                 )}
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* BOTTOM CTA BANNER */}
-      <section className="bg-gradient-to-r from-arxCyan to-arxBlue py-16 text-center px-4">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-arxDark mb-4">
-            Ready to upgrade your online presence?
-          </h2>
-          <p className="text-arxDark/85 font-medium text-base sm:text-lg mb-8">
-            Send us a message today and get a free consultation for your website, design, or marketing project.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              to="/contact"
-              className="px-8 py-4 rounded-full bg-arxDark text-white font-bold text-sm sm:text-base hover:opacity-95 transition shadow-lg"
-            >
-              Start Your Project
-            </Link>
-            <a
-              href="https://wa.me/923241282633"
-              target="_blank"
-              rel="noreferrer"
-              className="px-8 py-4 rounded-full bg-white text-arxDark font-bold text-sm sm:text-base hover:bg-slate-100 transition shadow-lg"
-            >
-              WhatsApp: +92 324 1282633
-            </a>
           </div>
         </div>
       </section>

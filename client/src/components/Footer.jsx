@@ -6,7 +6,6 @@ export default function Footer() {
   const exploreLinks = [
     { label: "Home", to: "/" },
     { label: "Our Services", to: "/services" },
-    { label: "Our Work", to: "/portfolio" },
     { label: "About Us", to: "/about" },
     { label: "Contact Hub", to: "/contact" },
   ];

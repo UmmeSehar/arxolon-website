@@ -63,6 +63,29 @@ export default function Home() {
     },
   ];
 
+  const highlights = [
+    {
+      title: "Easy for Everyone",
+      desc: "Clear communication without confusing technical terms so any business owner can follow along easily.",
+    },
+    {
+      title: "All-in-One Creative & Tech",
+      desc: "From websites and mobile apps to graphics, video edits, stores, and social management in one place.",
+    },
+    {
+      title: "Direct Team Discussion",
+      desc: "Connect with our team to share your exact goals and discuss additional advantages for your project.",
+    },
+    {
+      title: "On-Time Delivery",
+      desc: "We keep a steady plan and clear milestones so your work moves forward smoothly without delays.",
+    },
+    {
+      title: "Flexible Support & Updates",
+      desc: "Whether starting fresh or improving an existing setup, our team stays available to guide you.",
+    },
+  ];
+
   const steps = [
     { num: "01", title: "Share Requirements", desc: "Tell us what you need in simple words." },
     { num: "02", title: "Plan & Structure", desc: "We map out the right layout and workflow." },
@@ -112,8 +135,8 @@ export default function Home() {
 
   return (
     <div>
-      {/* 1. HERO SECTION */}
-      <section className="bg-gradient-to-br from-[#051836] via-[#09295B] to-[#0E3A7A] text-white pt-28 pb-20 lg:pt-36 lg:pb-24">
+      {/* 1. HERO SECTION (Dark Blue) */}
+      <section className="bg-gradient-to-br from-[#051836] via-[#09295B] to-[#0E3A7A] text-white pt-28 pb-24 lg:pt-36 lg:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-400/15 border border-sky-300/30 text-sky-200 text-xs sm:text-sm font-bold mb-5">
@@ -161,17 +184,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. 9 SERVICES WITH MOVED IMAGES */}
-      <section className="py-20 bg-gradient-to-b from-[#082A5E] via-[#0B3D82] to-[#124FA3] text-white">
+      {/* 2. OUR SERVICES SECTION (Silver/Light-White Background + Bold Larger Heading + Blue Service Containers) */}
+      <section className="py-24 bg-[#F1F5F9] text-[#051836]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-sky-300">
+          <div className="max-w-3xl mb-14">
+            <span className="text-sm sm:text-base font-extrabold uppercase tracking-widest text-[#0B5ED7] block">
               Our Services
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-1">
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-[#051836] mt-2">
               9 Core Services
             </h2>
-            <p className="text-blue-100 mt-2 text-sm sm:text-base">
+            <p className="text-slate-700 mt-3 text-base sm:text-lg leading-relaxed">
               Simple, practical solutions designed for easy understanding and steady business growth.
             </p>
           </div>
@@ -180,7 +203,7 @@ export default function Home() {
             {services.map((srv, idx) => (
               <div
                 key={idx}
-                className="bg-[#07214A] border border-sky-300/25 rounded-2xl overflow-hidden shadow-lg hover:border-sky-300 transition flex flex-col justify-between"
+                className="bg-[#0B428A] text-white border border-sky-300/25 rounded-2xl overflow-hidden shadow-lg hover:border-sky-300 transition flex flex-col justify-between"
               >
                 <div>
                   <div className="overflow-hidden">
@@ -214,35 +237,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. HIGHLIGHTS */}
-      <section className="py-16 bg-gradient-to-r from-[#DCEEFF] via-[#EAF4FF] to-[#DCEEFF] text-[#051836]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-2xl p-6 border border-blue-200 shadow-sm">
-            <CheckCircle2 className="w-6 h-6 text-[#0B5ED7] mb-3" />
-            <h3 className="font-extrabold text-lg text-[#051836] mb-1.5">Easy for Everyone</h3>
-            <p className="text-sm text-slate-700 leading-relaxed">
-              Clear communication without confusing technical terms so any business owner can follow along easily.
-            </p>
-          </div>
-          <div className="bg-white rounded-2xl p-6 border border-blue-200 shadow-sm">
-            <CheckCircle2 className="w-6 h-6 text-[#0B5ED7] mb-3" />
-            <h3 className="font-extrabold text-lg text-[#051836] mb-1.5">All-in-One Creative & Tech</h3>
-            <p className="text-sm text-slate-700 leading-relaxed">
-              From websites and mobile apps to graphics, video edits, stores, and social management in one place.
-            </p>
-          </div>
-          <div className="bg-white rounded-2xl p-6 border border-blue-200 shadow-sm">
-            <CheckCircle2 className="w-6 h-6 text-[#0B5ED7] mb-3" />
-            <h3 className="font-extrabold text-lg text-[#051836] mb-1.5">Direct Team Discussion</h3>
-            <p className="text-sm text-slate-700 leading-relaxed">
-              Connect with our team to share your exact goals and discuss additional advantages for your project.
-            </p>
-          </div>
+      {/* 3. HIGHLIGHTS SECTION (Light Blue Background + 5 Paragraphs/Cards) */}
+      <section className="py-20 bg-[#DCEEFF] text-[#051836]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          {highlights.map((item) => (
+            <div
+              key={item.title}
+              className="bg-white rounded-2xl p-6 border border-blue-200 shadow-sm"
+            >
+              <CheckCircle2 className="w-6 h-6 text-[#0B5ED7] mb-3" />
+              <h3 className="font-extrabold text-base sm:text-lg text-[#051836] mb-1.5">
+                {item.title}
+              </h3>
+              <p className="text-sm text-slate-700 leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* 4. 5 STEPS SECTION */}
-      <section className="py-20 bg-gradient-to-r from-[#051836] via-[#082A5E] to-[#0B428A] text-white">
+      {/* 4. 5 STEPS SECTION (Dark Blue Background + Containers) */}
+      <section className="py-24 bg-gradient-to-r from-[#051836] via-[#082A5E] to-[#0B428A] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-10">
             How We Work in 5 Steps
@@ -264,10 +280,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. CLIENT FEEDBACK SECTION */}
-      <section className="py-16 bg-[#082A5E] text-white border-t border-sky-300/15">
+      {/* 5. CLIENT FEEDBACK SECTION (White Background + Blue Heading + Dark Blue Containers) */}
+      <section className="py-20 bg-white text-[#051836]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-extrabold mb-8">Client Feedback</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B5ED7] mb-8">
+            Client Feedback
+          </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
@@ -286,7 +304,7 @@ export default function Home() {
                 quote: "Easy to talk to the team and discuss project needs without complicated jargon.",
               },
             ].map((item, i) => (
-              <div key={i} className="bg-[#051836] border border-sky-300/20 rounded-2xl p-6">
+              <div key={i} className="bg-[#051836] text-white border border-sky-300/20 rounded-2xl p-6">
                 <div className="flex gap-1 text-amber-400 mb-3">
                   {[...Array(5)].map((_, s) => (
                     <Star key={s} className="w-4 h-4 fill-current" />
@@ -301,8 +319,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. COMMON QUESTIONS (9 Questions) */}
-      <section className="py-16 bg-gradient-to-b from-[#DCEEFF] to-[#CFE6FF] text-[#051836]">
+      {/* 6. COMMON QUESTIONS (Light Blue Background + Black Text) */}
+      <section className="py-20 bg-gradient-to-b from-[#DCEEFF] to-[#CFE6FF] text-[#051836]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#051836] mb-6">
             Common Questions

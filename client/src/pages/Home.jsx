@@ -188,10 +188,10 @@ export default function Home() {
       <section className="py-24 bg-[#F1F5F9] text-[#051836]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-14">
-            <span className="text-sm sm:text-base font-extrabold uppercase tracking-widest text-[#0B5ED7] block">
+            <span className="text-6xl sm:text-base font-extrabold uppercase tracking-widest text-[#0B5ED7] block">
               Our Services
             </span>
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-[#051836] mt-2">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#051836] mt-2">
               9 Core Services
             </h2>
             <p className="text-slate-700 mt-3 text-base sm:text-lg leading-relaxed">

@@ -1,145 +1,155 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle2, Clock, Headphones, ShieldCheck, ArrowRight } from "lucide-react";
 
 export default function Services() {
-  const allServices = [
+  const [selectedService, setSelectedService] = useState("Website Development");
+
+  const serviceList = [
     {
-      title: "Website Development",
-      tag: "Websites & Online Stores",
-      desc: "We create clean, fast-loading websites that look great on mobile phones and computers. Whether you need a company profile or an online shop, we build it ready for customers.",
-      features: [
-        "Custom Business Websites",
-        "Online E-Commerce Stores",
-        "WordPress & Modern Web Apps",
-        "100% Mobile Friendly Design",
-        "Contact & WhatsApp Integration",
-        "Ongoing Updates & Support",
-      ],
+      name: "Website Development",
       img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
+      advantage: "Clean structure, responsive screens, and reliable performance.",
     },
     {
-      title: "Digital Marketing",
-      tag: "Ads & Customer Leads",
-      desc: "We help your business reach the right buyers on Facebook, Instagram, and Google so you get more inquiries, calls, and sales.",
-      features: [
-        "Facebook & Instagram Ad Campaigns",
-        "Google Search Ads",
-        "Local Audience Targeting",
-        "Google Business Profile Growth",
-        "Ad Copy & Creative Setup",
-        "Clear Performance Reporting",
-      ],
-      img: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=900&q=80",
+      name: "Social Media Marketing",
+      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+      advantage: "Audience-focused ad planning and clear campaign tracking.",
     },
     {
-      title: "Graphic Designing",
-      tag: "Logos & Brand Visuals",
-      desc: "Make a strong first impression with professional designs. From brand logos to social media posts and print flyers, we design visuals people remember.",
-      features: [
-        "Modern Logo & Brand Identity",
-        "Social Media Posts & Banners",
-        "Business Cards & Stationery",
-        "Brochures, Menus & Flyers",
-        "Product Packaging Design",
-        "High-Resolution Print & Web Files",
-      ],
+      name: "Mobile App Development",
+      img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+      advantage: "Smooth navigation and practical mobile user experience.",
+    },
+    {
+      name: "Graphic Designing",
+      img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=900&q=80",
+      advantage: "Sharp visual hierarchy and consistent brand styling.",
+    },
+    {
+      name: "Website Designing",
+      img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=900&q=80",
+      advantage: "Modern layouts that highlight key offers clearly.",
+    },
+    {
+      name: "Social Media Account Management",
+      img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
+      advantage: "Coordinated handling across Instagram, Facebook, and TikTok.",
+    },
+    {
+      name: "Video Editing",
+      img: "https://images.unsplash.com/photo-1574717024653-61fd2323656d?auto=format&fit=crop&w=900&q=80",
+      advantage: "Clean cuts, captions, and social-ready video formats.",
+    },
+    {
+      name: "E-Commerce Fashion & Retail Store",
+      img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80",
+      advantage: "Product-focused storefront presentation for retail and apparel.",
+    },
+    {
+      name: "Logos & Brand Identity",
       img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=900&q=80",
-    },
-    {
-      title: "Video Editing",
-      tag: "Reels, TikTok & Promo Ads",
-      desc: "Turn raw phone or camera footage into smooth, high-energy videos that keep viewers watching and bring more engagement to your brand.",
-      features: [
-        "Instagram Reels & TikTok Videos",
-        "Promotional Business Ads",
-        "YouTube Video Editing",
-        "Animated Captions & Transitions",
-        "Background Music & Audio Cleanup",
-        "Ready-to-Post Vertical & Wide Formats",
-      ],
-      img: "https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=900&q=80",
-    },
-    {
-      title: "Social Accounts Management",
-      tag: "Complete Page Handling",
-      desc: "Save your time while we keep your social media pages active, professional, and growing every week with planned posts and reels.",
-      features: [
-        "Facebook & Instagram Page Management",
-        "LinkedIn & TikTok Account Handling",
-        "Monthly Content & Post Planning",
-        "Graphic Posts & Short Reels Included",
-        "Caption Writing & Hashtag Strategy",
-        "Monthly Growth Summary",
-      ],
-      img: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=900&q=80",
+      advantage: "Memorable marks and cohesive visual guidelines.",
     },
   ];
 
   return (
-    <div className="bg-white">
-      {/* Page Header */}
-      <section className="bg-arxDark text-white py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-arxCyan">
-            Our Services
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-extrabold mt-2 mb-4">
-            Simple, effective digital services for your business
-          </h1>
-          <p className="text-slate-300 text-base sm:text-lg">
-            Choose a single service or combine them into a complete monthly package tailored to your goals.
+    <div className="pt-20 bg-[#E6F2FF] text-[#051836] min-h-screen">
+      {/* Dark Navy Top Header */}
+      <section className="py-16 bg-gradient-to-r from-[#051836] via-[#082A5E] to-[#0B428A] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl sm:text-5xl font-extrabold">Our 9 Services</h1>
+          <p className="mt-3 text-blue-100 max-w-2xl text-sm sm:text-base">
+            Explore our complete service lineup designed for businesses looking for clear, dependable execution.
           </p>
         </div>
       </section>
 
-      {/* Alternating Service Rows */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-          {allServices.map((srv, idx) => (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-12">
+        {/* Light Blue Quotes Box */}
+        <div className="bg-[#CFE6FF] border border-blue-300 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <div className="grid md:grid-cols-3 gap-5 mb-5">
+            <div className="flex items-start gap-3">
+              <Clock className="w-5 h-5 text-[#0B5ED7] shrink-0 mt-0.5" />
+              <p className="text-sm font-bold text-[#051836]">
+                Work delivered on time according to agreed milestones.
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <Headphones className="w-5 h-5 text-[#0B5ED7] shrink-0 mt-0.5" />
+              <p className="text-sm font-bold text-[#051836]">
+                24/7 support availability for smooth communication.
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <ShieldCheck className="w-5 h-5 text-[#0B5ED7] shrink-0 mt-0.5" />
+              <p className="text-sm font-bold text-[#051836]">
+                Dedicated commitment to quality from start to finish.
+              </p>
+            </div>
+          </div>
+          <p className="text-xs sm:text-sm text-slate-800 font-semibold border-t border-blue-300/80 pt-4">
+            If you connect with our team, they will tell you about more advantages and custom options tailored to your project requirements.
+          </p>
+        </div>
+
+        {/* All 9 Services Cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+          {serviceList.map((item) => (
             <div
-              key={idx}
-              className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-arxSurface p-6 sm:p-10 rounded-3xl border border-slate-200/80"
+              key={item.name}
+              className="bg-white rounded-2xl border border-blue-200 overflow-hidden shadow-sm flex flex-col justify-between"
             >
-              <div className={`lg:col-span-6 ${idx % 2 === 1 ? "lg:order-2" : ""}`}>
-                <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
-                  <img
-                    src={srv.img}
-                    alt={srv.title}
-                    className="w-full h-64 sm:h-80 object-cover"
-                  />
+              <div>
+                <img src={item.img} alt={item.name} className="w-full h-44 object-cover" />
+                <div className="p-6">
+                  <h2 className="text-xl font-extrabold text-[#051836] mb-2">{item.name}</h2>
+                  <p className="text-sm text-slate-700 flex items-start gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#0B5ED7] shrink-0 mt-1" />
+                    <span>{item.advantage}</span>
+                  </p>
                 </div>
               </div>
-
-              <div className={`lg:col-span-6 ${idx % 2 === 1 ? "lg:order-1" : ""}`}>
-                <span className="inline-block px-3.5 py-1 rounded-full bg-cyan-100 text-arxDark text-xs font-bold mb-3">
-                  {srv.tag}
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-arxDark mb-4">
-                  {srv.title}
-                </h2>
-                <p className="text-slate-600 leading-relaxed mb-6">{srv.desc}</p>
-
-                <ul className="grid sm:grid-cols-2 gap-3 mb-8">
-                  {srv.features.map((feat, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm font-semibold text-arxDark">
-                      <CheckCircle2 className="w-4 h-4 text-arxBlue shrink-0 mt-1" />
-                      <span>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-
+              <div className="px-6 pb-6">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-arxCyan to-arxBlue text-arxDark font-bold text-sm shadow-md hover:opacity-95 transition"
+                  onClick={() => setSelectedService(item.name)}
+                  className="inline-flex items-center gap-1.5 text-sm font-extrabold text-[#0B5ED7] hover:text-[#051836]"
                 >
-                  Get a Quote for {srv.title} <ArrowRight className="w-4 h-4" />
+                  Select Service <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
           ))}
         </div>
-      </section>
+
+        {/* Select Service Quick Box with All 9 Services */}
+        <div className="bg-gradient-to-r from-[#051836] to-[#0B428A] text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <label htmlFor="serviceSelect" className="block text-xs uppercase tracking-wider text-sky-300 font-bold mb-1.5">
+              Select Service (All 9)
+            </label>
+            <select
+              id="serviceSelect"
+              value={selectedService}
+              onChange={(e) => setSelectedService(e.target.value)}
+              className="px-4 py-2.5 rounded-xl bg-[#07214A] border border-sky-300/30 text-white text-sm font-bold focus:outline-none"
+            >
+              {serviceList.map((s) => (
+                <option key={s.name} value={s.name}>
+                  {s.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <Link
+            to="/contact"
+            className="px-6 py-3 rounded-full bg-sky-400 hover:bg-sky-300 text-[#051836] font-extrabold text-sm transition"
+          >
+            Continue With {selectedService}
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Menu, X, ArrowRight } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { pathname } = useLocation();
-  const isHome = pathname === "/";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 35);
+    const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -22,40 +20,33 @@ export default function Navbar() {
     { name: "Contact", path: "/contact" },
   ];
 
-  // Top par bright blue hero ke saath transparent blue, scroll par frosted-glass blur
-  const headerStyle = scrolled
-    ? "bg-white/75 backdrop-blur-xl shadow-lg border-b border-slate-200/70 py-2.5 text-arxDark"
-    : isHome
-    ? "bg-[#0B5ED7]/90 backdrop-blur-md border-b border-white/15 py-3.5 text-white"
-    : "bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 text-arxDark";
-
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerStyle}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Bara aur Clear Logo */}
-        <Link to="/" className="flex items-center shrink-0">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 text-white border-b border-blue-400/20 ${
+        scrolled
+          ? "bg-[#051836]/75 backdrop-blur-xl shadow-lg py-2.5"
+          : "bg-[#051836] py-3.5"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
+        {/* Logo */}
+        <Link to="/" onClick={() => setOpen(false)} className="flex items-center shrink-0">
           <img
             src="/logo.png"
             alt="Arxolon Technologies"
-            className="h-14 sm:h-16 md:h-[72px] w-auto object-contain transition-transform duration-300 hover:scale-105"
+            className="h-12 sm:h-14 md:h-16 w-auto object-contain"
           />
         </Link>
 
-        {/* Desktop Links */}
-        <nav className="hidden lg:flex items-center gap-8">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
               className={({ isActive }) =>
-                `text-[15px] font-bold transition-colors ${
-                  scrolled || !isHome
-                    ? isActive
-                      ? "text-[#0B5ED7]"
-                      : "text-arxDark hover:text-[#0B5ED7]"
-                    : isActive
-                    ? "text-cyan-200 underline underline-offset-8 decoration-2"
-                    : "text-white hover:text-cyan-200"
+                `text-sm lg:text-[15px] font-bold transition-colors whitespace-nowrap ${
+                  isActive ? "text-cyan-300" : "text-white hover:text-cyan-200"
                 }`
               }
             >
@@ -64,49 +55,48 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Right CTA Button */}
-        <div className="hidden lg:flex items-center">
+        {/* Desktop CTA */}
+        <div className="hidden md:flex items-center shrink-0">
           <Link
             to="/contact"
-            className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-extrabold text-sm shadow-md transition hover:scale-105 ${
-              scrolled || !isHome
-                ? "bg-gradient-to-r from-[#00C6FF] to-[#0072FF] text-white"
-                : "bg-white text-[#073B8C] hover:bg-cyan-50"
-            }`}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#0284C7] to-[#38BDF8] text-[#051836] font-extrabold text-sm shadow-md hover:opacity-95 transition whitespace-nowrap"
           >
             Get a Free Quote <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile Menu Button */}
         <button
+          type="button"
           onClick={() => setOpen(!open)}
           aria-label="Toggle Menu"
-          className={`lg:hidden p-2 rounded-xl ${
-            scrolled || !isHome ? "text-arxDark hover:bg-slate-100" : "text-white hover:bg-white/15"
-          }`}
+          className="md:hidden p-2.5 rounded-lg bg-white/10 text-white hover:bg-white/20 shrink-0"
         >
-          {open ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Dropdown Menu */}
       {open && (
-        <div className="lg:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200 px-6 py-6 space-y-4 shadow-2xl text-arxDark">
+        <div className="md:hidden bg-[#051836]/95 backdrop-blur-xl border-t border-blue-400/20 px-5 py-5 space-y-3">
           {navLinks.map((item) => (
-            <Link
+            <NavLink
               key={item.path}
               to={item.path}
               onClick={() => setOpen(false)}
-              className="block py-2 text-base font-bold hover:text-[#0B5ED7]"
+              className={({ isActive }) =>
+                `block py-2 text-base font-bold border-b border-white/10 ${
+                  isActive ? "text-cyan-300" : "text-white hover:text-cyan-200"
+                }`
+              }
             >
               {item.name}
-            </Link>
+            </NavLink>
           ))}
           <Link
             to="/contact"
             onClick={() => setOpen(false)}
-            className="block w-full text-center py-3.5 rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0072FF] text-white font-extrabold text-sm"
+            className="mt-3 block w-full text-center py-3 rounded-full bg-gradient-to-r from-[#0284C7] to-[#38BDF8] text-[#051836] font-extrabold text-sm"
           >
             Get a Free Quote
           </Link>

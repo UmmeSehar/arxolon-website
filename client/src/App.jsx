@@ -22,7 +22,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen font-sans text-slate-800 bg-white">
+      <div className="flex flex-col min-h-screen font-sans bg-[#051836]">
         <Navbar />
         <LeftSocialBar />
         <main className="flex-grow">

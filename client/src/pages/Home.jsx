@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Plus, Minus, Sparkles, CheckCircle2, Star } from "lucide-react";
 
@@ -8,6 +8,26 @@ const FALLBACK_MEDIA =
 export default function Home() {
   const [heroZoomed, setHeroZoomed] = useState(false);
   const [openFaq, setOpenFaq] = useState(0);
+  const [currentWork, setCurrentWork] = useState(0);
+
+  const featuredWorks = [
+    { title: "Website Development", img: "/separate_image_1.png" },
+    { title: "Social Media Marketing", img: "/separate_image_2.png" },
+    { title: "Mobile App Development", img: "/separate_image_3.png" },
+    { title: "Graphic Designing", img: "/separate_image_4.png" },
+    { title: "Website Designing", img: "/separate_image_5.png" },
+    { title: "Social Media Management", img: "/separate_image_6.png" },
+    { title: "Video Editing", img: "/separate_image_7.png" },
+    { title: "E-Commerce Fashion & Retail Store", img: "/separate_image_8.png" },
+    { title: "Logos & Brand Identity", img: "/separate_image_9.png" },
+  ];
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentWork((prev) => (prev + 1) % featuredWorks.length);
+    }, 3000);
+    return () => clearInterval(slideInterval);
+  }, [featuredWorks.length]);
 
   const handleImgError = (e) => {
     if (e.currentTarget.src !== FALLBACK_MEDIA) {
@@ -272,6 +292,60 @@ export default function Home() {
                 <h3 className="font-bold text-base text-white mb-1.5">{st.title}</h3>
                 <p className="text-xs sm:text-sm text-blue-100 leading-relaxed">{st.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED WORK SHOWCASE (Full-Screen Auto-Sliding 3D Mockups) */}
+      <section className="min-h-screen flex flex-col justify-center items-center py-20 bg-gradient-to-b from-[#F8FAFC] via-[#EBF4FF] to-white relative overflow-hidden border-y border-blue-200/70">
+        {/* Subtle Modern Architectural Grid Background */}
+        <div className="absolute inset-0 opacity-35 pointer-events-none bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:48px_48px]"></div>
+        {/* Decorative Bottom-Right Navy/Sky Accent Wave */}
+        <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-gradient-to-tr from-[#082A5E]/15 to-sky-400/20 blur-2xl pointer-events-none"></div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#051836] tracking-tight mb-10">
+            Featured Work
+          </h2>
+
+          {/* Large Auto-Moving Display */}
+          <div className="relative h-80 sm:h-[420px] md:h-[480px] flex items-center justify-center">
+            {featuredWorks.map((work, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${
+                  index === currentWork
+                    ? "opacity-100 scale-100 translate-x-0"
+                    : "opacity-0 scale-95 translate-x-10 pointer-events-none"
+                }`}
+              >
+                <img
+                  src={work.img}
+                  alt={work.title}
+                  className="max-h-72 sm:max-h-[370px] md:max-h-[430px] w-auto object-contain drop-shadow-[0_22px_28px_rgba(5,24,54,0.22)]"
+                />
+                <span className="mt-5 inline-block px-5 py-1.5 rounded-full bg-white/90 border border-blue-200 shadow-sm text-xs sm:text-sm font-extrabold text-[#082A5E] tracking-wide">
+                  {work.title}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Slide Indicator Dots */}
+          <div className="flex justify-center items-center gap-2.5 mt-8">
+            {featuredWorks.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setCurrentWork(idx)}
+                aria-label={`Featured Work ${idx + 1}`}
+                className={`h-3 rounded-full transition-all duration-300 ${
+                  idx === currentWork
+                    ? "w-8 bg-[#082A5E]"
+                    : "w-3 bg-sky-300 hover:bg-sky-400"
+                }`}
+              />
             ))}
           </div>
         </div>

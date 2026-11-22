@@ -22,10 +22,11 @@ export default function Home() {
     { title: "Logos & Brand Identity", img: "/separate_image_9.png" },
   ];
 
+  // 700ms slide transition + 2000ms center pause = 2700ms total cycle per image
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setCurrentWork((prev) => (prev + 1) % featuredWorks.length);
-    }, 3000);
+    }, 2700);
     return () => clearInterval(slideInterval);
   }, [featuredWorks.length]);
 
@@ -112,6 +113,39 @@ export default function Home() {
     { num: "03", title: "Design & Build", desc: "Our team creates your visuals, pages, and assets." },
     { num: "04", title: "Review & Refine", desc: "We polish details based on your feedback." },
     { num: "05", title: "Launch & Support", desc: "Go live smoothly with ongoing assistance." },
+  ];
+
+  const clientReviews = [
+    {
+      name: "Tariq Mahmood",
+      role: "Business Owner",
+      quote: "Simple process, clear updates, and a website that looks clean on both desktop and mobile.",
+    },
+    {
+      name: "Sana Tariq",
+      role: "Retail Store Founder",
+      quote: "Great help with product visuals, social media handling, and timely delivery.",
+    },
+    {
+      name: "Usman Khalid",
+      role: "Service Provider",
+      quote: "Easy to talk to the team and discuss project needs without complicated jargon.",
+    },
+    {
+      name: "Ayesha Siddiqui",
+      role: "Fashion Boutique Owner",
+      quote: "Our online retail store and brand logo turned out modern, clean, and very easy for customers to browse.",
+    },
+    {
+      name: "Bilal Ahmed",
+      role: "Real Estate Consultant",
+      quote: "Their social media campaigns and short video reels brought steady inquiries right from the first month.",
+    },
+    {
+      name: "Hina Kamran",
+      role: "Clinic & Wellness Director",
+      quote: "Reliable team that listens carefully, explains every step clearly, and delivers right on schedule.",
+    },
   ];
 
   const faqs = [
@@ -254,23 +288,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. HIGHLIGHTS SECTION (Light Blue Background + 5 Paragraphs/Cards) */}
-      <section className="py-20 bg-[#DCEEFF] text-[#051836]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
-          {highlights.map((item) => (
-            <div
-              key={item.title}
-              className="bg-white rounded-2xl p-6 border border-blue-200 shadow-sm"
-            >
-              <CheckCircle2 className="w-6 h-6 text-[#0B5ED7] mb-3" />
-              <h3 className="font-extrabold text-base sm:text-lg text-[#051836] mb-1.5">
-                {item.title}
-              </h3>
-              <p className="text-sm text-slate-700 leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          ))}
+      {/* 3. HIGHLIGHTS SECTION (Light Blue Background + Heading + 5 Cards) */}
+      <section className="py-24 bg-[#DCEEFF] text-[#051836]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0B5ED7] block">
+              Our Advantage
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#051836] mt-1.5">
+              Why Businesses Choose Arxolon
+            </h2>
+            <p className="text-slate-700 mt-2 text-sm sm:text-base">
+              Built around clarity, dependable delivery, and practical support at every stage.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {highlights.map((item) => (
+              <div
+                key={item.title}
+                className="bg-white rounded-2xl p-6 border border-blue-200 shadow-sm flex flex-col justify-between"
+              >
+                <div>
+                  <CheckCircle2 className="w-7 h-7 text-[#0B5ED7] mb-4" />
+                  <h3 className="font-extrabold text-base sm:text-lg text-[#051836] mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -297,39 +347,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURED WORK SHOWCASE (Full-Screen Auto-Sliding 3D Mockups) */}
-      <section className="min-h-screen flex flex-col justify-center items-center py-20 bg-gradient-to-b from-[#F8FAFC] via-[#EBF4FF] to-white relative overflow-hidden border-y border-blue-200/70">
-        {/* Subtle Modern Architectural Grid Background */}
-        <div className="absolute inset-0 opacity-35 pointer-events-none bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:48px_48px]"></div>
-        {/* Decorative Bottom-Right Navy/Sky Accent Wave */}
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-gradient-to-tr from-[#082A5E]/15 to-sky-400/20 blur-2xl pointer-events-none"></div>
+      {/* OUR CREATIVE SHOWCASE (Realistic Brick Wall + Right-to-Left Sliding with 2s Center Pause) */}
+      <section className="min-h-screen flex flex-col justify-center items-center py-20 realistic-brick-wall relative overflow-hidden border-y border-slate-300/80">
+        {/* Realistic Wall Ambient Lighting & Wall Decor Chevrons */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-slate-200/60 pointer-events-none"></div>
+
+        {/* Left Wall Decorative Vertical Chevrons */}
+        <div className="hidden sm:flex flex-col gap-1 text-sky-500/70 font-black text-2xl leading-none select-none absolute left-16 bottom-28 pointer-events-none">
+          <span>⌄</span>
+          <span>⌄</span>
+          <span>⌄</span>
+          <span>⌄</span>
+          <span>⌄</span>
+        </div>
+
+        {/* Right Wall Corner Accent Wave & Vertical Chevrons */}
+        <div
+          className="absolute bottom-0 right-0 w-72 sm:w-[440px] h-48 sm:h-72 bg-gradient-to-tl from-[#082A5E] via-[#0B428A] to-[#0284C7] pointer-events-none opacity-95"
+          style={{ clipPath: "polygon(100% 15%, 15% 100%, 100% 100%)" }}
+        ></div>
+        <div className="hidden sm:flex flex-col gap-1 text-white/90 font-black text-2xl leading-none select-none absolute right-8 bottom-24 z-10 pointer-events-none">
+          <span>⌃</span>
+          <span>⌃</span>
+          <span>⌃</span>
+          <span>⌃</span>
+          <span>⌃</span>
+        </div>
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#051836] tracking-tight mb-10">
-            Featured Work
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#051836] tracking-tight mb-10 drop-shadow-sm">
+            Our Creative Showcase
           </h2>
 
-          {/* Large Auto-Moving Display */}
-          <div className="relative h-80 sm:h-[420px] md:h-[480px] flex items-center justify-center">
-            {featuredWorks.map((work, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${
-                  index === currentWork
-                    ? "opacity-100 scale-100 translate-x-0"
-                    : "opacity-0 scale-95 translate-x-10 pointer-events-none"
-                }`}
-              >
-                <img
-                  src={work.img}
-                  alt={work.title}
-                  className="max-h-72 sm:max-h-[370px] md:max-h-[430px] w-auto object-contain drop-shadow-[0_22px_28px_rgba(5,24,54,0.22)]"
-                />
-                <span className="mt-5 inline-block px-5 py-1.5 rounded-full bg-white/90 border border-blue-200 shadow-sm text-xs sm:text-sm font-extrabold text-[#082A5E] tracking-wide">
-                  {work.title}
-                </span>
-              </div>
-            ))}
+          {/* Horizontal Right-to-Left Conveyor Stage (Enters from Right -> Pauses 2s Center -> Exits Left) */}
+          <div className="relative h-80 sm:h-[430px] md:h-[490px] w-full overflow-hidden flex items-center justify-center">
+            {featuredWorks.map((work, index) => {
+              const total = featuredWorks.length;
+              const prevIndex = (currentWork - 1 + total) % total;
+
+              let positionClass =
+                "translate-x-full opacity-0 pointer-events-none transition-none";
+              if (index === currentWork) {
+                positionClass =
+                  "translate-x-0 opacity-100 transition-all duration-700 ease-out z-20";
+              } else if (index === prevIndex) {
+                positionClass =
+                  "-translate-x-full opacity-0 transition-all duration-700 ease-out z-10 pointer-events-none";
+              }
+
+              return (
+                <div
+                  key={index}
+                  className={`absolute inset-0 flex flex-col items-center justify-center ${positionClass}`}
+                >
+                  <div className="overflow-hidden rounded-2xl flex items-center justify-center px-4">
+                    <img
+                      src={work.img}
+                      alt={work.title}
+                      className="max-h-72 sm:max-h-[370px] md:max-h-[430px] w-auto object-contain showcase-clean-img"
+                    />
+                  </div>
+                  <span className="mt-4 inline-block px-5 py-1.5 rounded-full bg-white/95 border border-slate-300 shadow-md text-xs sm:text-sm font-extrabold text-[#082A5E] tracking-wide">
+                    {work.title}
+                  </span>
+                </div>
+              );
+            })}
           </div>
 
           {/* Slide Indicator Dots */}
@@ -339,11 +422,11 @@ export default function Home() {
                 key={idx}
                 type="button"
                 onClick={() => setCurrentWork(idx)}
-                aria-label={`Featured Work ${idx + 1}`}
+                aria-label={`Showcase Slide ${idx + 1}`}
                 className={`h-3 rounded-full transition-all duration-300 ${
                   idx === currentWork
                     ? "w-8 bg-[#082A5E]"
-                    : "w-3 bg-sky-300 hover:bg-sky-400"
+                    : "w-3 bg-amber-400/80 hover:bg-amber-500"
                 }`}
               />
             ))}
@@ -351,39 +434,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. CLIENT FEEDBACK SECTION (White Background + Blue Heading + Dark Blue Containers) */}
-      <section className="py-20 bg-white text-[#051836]">
+      {/* 5. CLIENT FEEDBACK SECTION (6 Client Cards for Full, Balanced Page Length) */}
+      <section className="py-24 bg-white text-[#051836]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B5ED7] mb-8">
-            Client Feedback
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Tariq Mahmood",
-                role: "Business Owner",
-                quote: "Simple process, clear updates, and a website that looks clean on both desktop and mobile.",
-              },
-              {
-                name: "Sana Tariq",
-                role: "Retail Store Founder",
-                quote: "Great help with product visuals, social media handling, and timely delivery.",
-              },
-              {
-                name: "Usman Khalid",
-                role: "Service Provider",
-                quote: "Easy to talk to the team and discuss project needs without complicated jargon.",
-              },
-            ].map((item, i) => (
-              <div key={i} className="bg-[#051836] text-white border border-sky-300/20 rounded-2xl p-6">
-                <div className="flex gap-1 text-amber-400 mb-3">
-                  {[...Array(5)].map((_, s) => (
-                    <Star key={s} className="w-4 h-4 fill-current" />
-                  ))}
+          <div className="max-w-3xl mb-12">
+            <span className="text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#0B5ED7] block">
+              Testimonials
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#051836] mt-1.5">
+              Client Feedback
+            </h2>
+            <p className="text-slate-600 mt-2 text-sm sm:text-base">
+              What business owners and founders say about working with Arxolon Technologies.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+            {clientReviews.map((item, i) => (
+              <div
+                key={i}
+                className="bg-[#051836] text-white border border-sky-300/20 rounded-2xl p-7 shadow-md flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex gap-1 text-amber-400 mb-4">
+                    {[...Array(5)].map((_, s) => (
+                      <Star key={s} className="w-4 h-4 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-sm sm:text-base text-blue-100 leading-relaxed mb-6">
+                    "{item.quote}"
+                  </p>
                 </div>
-                <p className="text-sm text-blue-100 leading-relaxed mb-4">"{item.quote}"</p>
-                <p className="font-bold text-white text-sm">{item.name}</p>
-                <p className="text-xs text-sky-300">{item.role}</p>
+                <div className="border-t border-white/10 pt-4">
+                  <p className="font-bold text-white text-sm">{item.name}</p>
+                  <p className="text-xs text-sky-300">{item.role}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -391,7 +476,7 @@ export default function Home() {
       </section>
 
       {/* 6. COMMON QUESTIONS (Light Blue Background + Black Text) */}
-      <section className="py-20 bg-gradient-to-b from-[#DCEEFF] to-[#CFE6FF] text-[#051836]">
+      <section className="py-24 bg-gradient-to-b from-[#DCEEFF] to-[#CFE6FF] text-[#051836]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#051836] mb-6">
             Common Questions

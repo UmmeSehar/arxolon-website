@@ -14,6 +14,9 @@ import {
   Headphones,
   Cpu,
   Sparkles,
+  MessageCircle,
+  Wallet,
+  CalendarCheck,
 } from "lucide-react";
 
 const FALLBACK_MEDIA =
@@ -111,13 +114,53 @@ export default function About() {
 
   return (
     <div className="pt-20 bg-[#DCEEFF] text-[#051836] min-h-screen">
-      {/* 1. EXISTING HERO SECTION */}
-      <section className="py-16 bg-gradient-to-r from-[#051836] via-[#082A5E] to-[#0B428A] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-5xl font-extrabold">About Arxolon Technologies</h1>
-          <p className="mt-4 text-blue-100 max-w-3xl text-sm sm:text-base leading-relaxed">
-            We help businesses build a strong digital presence through practical web and mobile solutions, graphic and website design, video editing, e-commerce stores, and social media support.
+      {/* 1. ZYNEX-STYLE TRUST-BUILDING TOP HERO & STATS SECTION */}
+      <section className="py-20 bg-gradient-to-b from-white via-[#F0F7FF] to-[#DCEEFF] text-[#051836] border-b border-blue-200/80">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0B5ED7]/10 border border-[#0B5ED7]/25 text-[#0B5ED7] text-xs sm:text-sm font-extrabold mb-5">
+            <Sparkles className="w-4 h-4" /> Delivering Excellence Since 2024 – 2026
+          </span>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#051836] tracking-tight leading-tight">
+            About <span className="text-[#0B5ED7]">Arxolon Technologies</span>
+          </h1>
+
+          <p className="mt-5 text-base sm:text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed">
+            At <span className="font-extrabold text-[#051836]">Arxolon Technologies</span>, we drive innovation at the intersection of{" "}
+            <span className="font-bold text-[#0B5ED7]">modern technology and creative design</span>. Based in{" "}
+            <span className="font-extrabold text-[#051836]">Lahore, Pakistan</span>, from{" "}
+            <span className="font-bold text-[#0B5ED7]">2024 to 2026</span> we have been empowering startups, retail brands, and growing businesses with custom websites, mobile apps, standout logos, video editing, and result-driven social media management.
           </p>
+
+          {/* 3 Trust Stat Cards */}
+          <div className="grid sm:grid-cols-3 gap-6 mt-12">
+            <div className="bg-white rounded-2xl p-7 border border-blue-200/90 shadow-md">
+              <p className="text-3xl sm:text-4xl font-extrabold text-[#0B5ED7]">
+                2024–2026
+              </p>
+              <p className="text-sm font-bold text-slate-600 mt-2">
+                Consistent Digital Innovation
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-7 border border-blue-200/90 shadow-md">
+              <p className="text-3xl sm:text-4xl font-extrabold text-[#0B5ED7]">
+                9 Core
+              </p>
+              <p className="text-sm font-bold text-slate-600 mt-2">
+                All-in-One Creative & Tech Services
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-7 border border-blue-200/90 shadow-md">
+              <p className="text-3xl sm:text-4xl font-extrabold text-[#0B5ED7]">
+                100%
+              </p>
+              <p className="text-sm font-bold text-slate-600 mt-2">
+                Client Satisfaction & Custom Care
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -195,7 +238,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* 3. NEW SECTION: WE ALWAYS STRIVE TO PROVIDE THE BEST SERVICE (White Background + Image) */}
+      {/* 3. EXISTING SECTION: WE ALWAYS STRIVE TO PROVIDE THE BEST SERVICE (UNCHANGED) */}
       <section className="py-20 bg-white text-[#051836] border-t border-blue-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
           <div className="overflow-hidden rounded-2xl border border-blue-200 shadow-md bg-[#DCEEFF] p-2">
@@ -229,7 +272,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* 4. NEW SECTION: OUR MISSION & OUR VISION CARDS (Light Blue Background + White/Dark-Blue Boxes) */}
+      {/* 4. EXISTING SECTION: OUR MISSION & OUR VISION CARDS (UNCHANGED) */}
       <section className="py-20 bg-[#DCEEFF] text-[#051836]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8">
           <div className="bg-white rounded-2xl p-8 border border-blue-200 shadow-md">
@@ -254,7 +297,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* 5. NEW SECTION: OUR CORE VALUES (White Background + Light Blue / White Cards) */}
+      {/* 5. EXISTING SECTION: OUR CORE VALUES (UNCHANGED) */}
       <section className="py-20 bg-white text-[#051836]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
@@ -283,7 +326,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* 6. NEW SECTION: WHY PARTNER WITH US? (Dark Blue Background + 4 Feature Boxes) */}
+      {/* 6. EXISTING SECTION: WHY PARTNER WITH US? (UNCHANGED) */}
       <section className="py-20 bg-gradient-to-br from-[#051836] via-[#09295B] to-[#0E3A7A] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
@@ -316,21 +359,86 @@ export default function About() {
         </div>
       </section>
 
-      {/* 7. EXISTING BOTTOM CTA SECTION (UNCHANGED) */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="bg-[#051836] text-white rounded-2xl p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-sky-300/20">
-          <div>
-            <h3 className="text-xl sm:text-2xl font-extrabold">Want to talk about your project?</h3>
-            <p className="text-sm text-blue-100 mt-1">Reach out to our team for more details and advantages.</p>
+      {/* 7. EXPANDED LIGHT-BLUE / WHITE TRUST & COMMITMENT SECTION (Replaces narrow dark-blue strip) */}
+      <section className="py-20 bg-gradient-to-b from-[#DCEEFF] via-[#EBF4FF] to-white text-[#051836] border-t border-blue-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-3xl border border-blue-200 shadow-xl p-8 sm:p-12 lg:p-14">
+            <div className="max-w-3xl">
+              <span className="inline-block px-3.5 py-1 rounded-full bg-[#0B5ED7]/10 text-[#0B5ED7] text-xs sm:text-sm font-extrabold uppercase tracking-wider mb-3">
+                Our Promise to Every Client
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#051836] leading-tight">
+                We Fulfill Every Commitment—Tailored to Your Requirements & Budget
+              </h2>
+              <p className="mt-4 text-sm sm:text-base text-slate-700 leading-relaxed">
+                At Arxolon Technologies, trust is built through actions, not empty promises. Whatever we commit to at the start of your project, we deliver with complete honesty, transparent pricing, and zero hidden surprises. Whether you are launching a startup on a focused budget or scaling an established brand, our team crafts custom digital solutions that fit your exact needs and financial plan.
+              </p>
+            </div>
+
+            {/* 3 Trust & Budget Commitment Pillars */}
+            <div className="grid md:grid-cols-3 gap-6 my-10">
+              <div className="bg-[#F0F7FF] rounded-2xl p-6 border border-blue-200/80">
+                <Wallet className="w-7 h-7 text-[#0B5ED7] mb-3" />
+                <h3 className="font-extrabold text-lg text-[#051836] mb-1.5">
+                  Flexible & Budget-Friendly Plans
+                </h3>
+                <p className="text-sm text-slate-700 leading-relaxed">
+                  We structure packages around your exact budget so you get maximum quality and real business value without overspending.
+                </p>
+              </div>
+
+              <div className="bg-[#F0F7FF] rounded-2xl p-6 border border-blue-200/80">
+                <CheckCircle2 className="w-7 h-7 text-[#0B5ED7] mb-3" />
+                <h3 className="font-extrabold text-lg text-[#051836] mb-1.5">
+                  100% Requirement Fulfillment
+                </h3>
+                <p className="text-sm text-slate-700 leading-relaxed">
+                  Every feature, design detail, and revision is carefully aligned with your business goals before final delivery.
+                </p>
+              </div>
+
+              <div className="bg-[#F0F7FF] rounded-2xl p-6 border border-blue-200/80">
+                <CalendarCheck className="w-7 h-7 text-[#0B5ED7] mb-3" />
+                <h3 className="font-extrabold text-lg text-[#051836] mb-1.5">
+                  Honest Timelines & Ongoing Care
+                </h3>
+                <p className="text-sm text-slate-700 leading-relaxed">
+                  We respect your launch deadlines, keep you updated at every step, and stay available even after your project goes live.
+                </p>
+              </div>
+            </div>
+
+            {/* Bottom Direct Action Bar */}
+            <div className="pt-6 border-t border-blue-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+              <div>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-[#051836]">
+                  Want to talk about your project and budget?
+                </h3>
+                <p className="text-sm text-slate-600 mt-1">
+                  Reach out directly to our team for personalized guidance and clear project estimates.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3.5 shrink-0">
+                <a
+                  href="https://wa.me/923241282633?text=Hello%20Arxolon%20Technologies!%20I%20would%20like%20to%20discuss%20my%20project%20requirements%20and%20budget."
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-extrabold text-sm shadow-md transition"
+                >
+                  <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
+                </a>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#0B5ED7] hover:bg-[#051836] text-white font-extrabold text-sm shadow-md transition"
+                >
+                  Go to Contact <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
           </div>
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-sky-400 hover:bg-sky-300 text-[#051836] font-extrabold text-sm transition shrink-0"
-          >
-            Go to Contact <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

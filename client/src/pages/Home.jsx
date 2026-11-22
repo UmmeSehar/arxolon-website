@@ -19,50 +19,50 @@ export default function Home() {
     {
       title: "Website Development",
       desc: "Fast, reliable business websites and web applications built for smooth performance across devices.",
-      img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80",
+      img: "/web-dev.jpg",
     },
     {
       title: "Social Media Marketing",
       desc: "Targeted campaigns on social platforms to reach real audiences, inquiries, and brand growth.",
-      img: "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=900&q=80",
+      img: "/social-marketing.jpg",
     },
     {
       title: "Mobile App Development",
       desc: "Clean, user-friendly mobile applications crafted for everyday customer convenience.",
-      img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+      img: "/mobile-app.jpg",
     },
     {
       title: "Graphic Designing",
       desc: "Clear, modern social posts, banners, flyers, and visual creatives tailored to your brand.",
-      img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=900&q=80",
+      img: "/graphic-design.jpg",
     },
     {
       title: "Website Designing",
       desc: "Structured, attractive page layouts and clear visual hierarchy that visitors easily understand.",
-      img: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=900&q=80",
+      img: "/web-design.jpg",
     },
     {
       title: "Social Media Account Management",
       desc: "Consistent posting, profile care, and multi-account handling across Instagram, Facebook, and TikTok.",
-      img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
+      img: "/social-management.jpg",
     },
     {
       title: "Video Editing",
       desc: "Engaging short-form reels, promos, and clean video edits with smooth pacing and sound.",
-      img: "https://images.unsplash.com/photo-1574717024653-61fd3113ff6d?auto=format&fit=crop&w=900&q=80",
+      img: "/video-editing.jpg",
     },
     {
       title: "E-Commerce Fashion & Retail Store",
       desc: "Online storefronts for fashion and retail brands with clean product displays and easy shopping flow.",
-      img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80",
+      img: "/ecommerce-store.jpg",
     },
     {
       title: "Logos & Brand Identity",
       desc: "Distinctive logos, color palettes, and cohesive visual identity elements for lasting recognition.",
-      img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=900&q=80",
+      img: "/brand-logo.jpg",
     },
   ];
-
+  
   const highlights = [
     {
       title: "Easy for Everyone",
@@ -167,8 +167,8 @@ export default function Home() {
 
           <div className="lg:col-span-5">
             <div className="rounded-3xl overflow-visible border border-sky-300/25 shadow-2xl bg-[#07214A] p-2">
-              <img
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1000&q=80"
+             <img
+               src="https://img.magnific.com/free-photo/business-woman-talking-with-two-businessmen_1262-806.jpg?semt=ais_hybrid&w=740&q=80"
                 alt="Digital Workspace"
                 onError={handleImgError}
                 onClick={() => setHeroZoomed(!heroZoomed)}
@@ -176,9 +176,6 @@ export default function Home() {
                   heroZoomed ? "is-zoomed shadow-2xl" : ""
                 }`}
               />
-              <p className="text-[11px] text-sky-200/80 text-center mt-2">
-                Click image to {heroZoomed ? "reset zoom" : "zoom"}
-              </p>
             </div>
           </div>
         </div>

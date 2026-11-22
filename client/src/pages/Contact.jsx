@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Send, CheckCircle, AlertCircle, Mail, MapPin, Clock } from "lucide-react";
+import {
+  Send,
+  CheckCircle,
+  AlertCircle,
+  Mail,
+  MapPin,
+  Clock,
+  MessageCircle,
+} from "lucide-react";
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -230,14 +238,28 @@ export default function Contact() {
                 ></textarea>
               </div>
 
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full py-3.5 px-6 rounded-xl bg-[#082A5E] hover:bg-[#0B428A] text-white font-extrabold text-sm sm:text-base transition flex items-center justify-center gap-2 shadow-md"
-              >
-                {loading ? "Sending Message..." : "Send Inquiry"}
-                <Send className="w-4 h-4 text-sky-300" />
-              </button>
+              <div className="space-y-3 pt-1">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-3.5 px-6 rounded-xl bg-[#082A5E] hover:bg-[#0B428A] text-white font-extrabold text-sm sm:text-base transition flex items-center justify-center gap-2 shadow-md"
+                >
+                  {loading ? "Sending Message..." : "Send Inquiry"}
+                  <Send className="w-4 h-4 text-sky-300" />
+                </button>
+
+                <a
+                  href={`https://wa.me/923241282633?text=${encodeURIComponent(
+                    `Hello Arxolon Technologies! I would like to inquire about ${form.service}.`
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full py-3.5 px-6 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-extrabold text-sm sm:text-base transition flex items-center justify-center gap-2 shadow-md"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>Contact on WhatsApp</span>
+                </a>
+              </div>
             </form>
           </div>
         </div>

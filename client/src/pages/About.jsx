@@ -118,7 +118,7 @@ export default function About() {
       <section className="py-20 bg-gradient-to-b from-white via-[#F0F7FF] to-[#DCEEFF] text-[#051836] border-b border-blue-200/80">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0B5ED7]/10 border border-[#0B5ED7]/25 text-[#0B5ED7] text-xs sm:text-sm font-extrabold mb-5">
-            <Sparkles className="w-4 h-4" /> Delivering Excellence Since 2024 – 2026
+            <Sparkles className="w-4 h-4" /> Creative Digital & Tech Agency
           </span>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#051836] tracking-tight leading-tight">
@@ -128,18 +128,17 @@ export default function About() {
           <p className="mt-5 text-base sm:text-lg text-slate-700 max-w-3xl mx-auto leading-relaxed">
             At <span className="font-extrabold text-[#051836]">Arxolon Technologies</span>, we drive innovation at the intersection of{" "}
             <span className="font-bold text-[#0B5ED7]">modern technology and creative design</span>. Based in{" "}
-            <span className="font-extrabold text-[#051836]">Lahore, Pakistan</span>, from{" "}
-            <span className="font-bold text-[#0B5ED7]">2024 to 2026</span> we have been empowering startups, retail brands, and growing businesses with custom websites, mobile apps, standout logos, video editing, and result-driven social media management.
+            <span className="font-extrabold text-[#051836]">Lahore, Pakistan</span>, we empower startups, retail brands, and growing businesses globally with custom websites, mobile apps, standout logos, video editing, and result-driven social media management.
           </p>
 
           {/* 3 Trust Stat Cards */}
           <div className="grid sm:grid-cols-3 gap-6 mt-12">
             <div className="bg-white rounded-2xl p-7 border border-blue-200/90 shadow-md">
               <p className="text-3xl sm:text-4xl font-extrabold text-[#0B5ED7]">
-                2024–2026
+                50+
               </p>
               <p className="text-sm font-bold text-slate-600 mt-2">
-                Consistent Digital Innovation
+                Skilled Developers & Creators
               </p>
             </div>
 
@@ -359,24 +358,24 @@ export default function About() {
         </div>
       </section>
 
-      {/* 7. EXPANDED LIGHT-BLUE / WHITE TRUST & COMMITMENT SECTION (Replaces narrow dark-blue strip) */}
+      {/* 7. EXPANDED LIGHT-BLUE / WHITE TRUST & COMMITMENT SECTION (Centered Bold Heading Matching "Why Partner with Us?") */}
       <section className="py-20 bg-gradient-to-b from-[#DCEEFF] via-[#EBF4FF] to-white text-[#051836] border-t border-blue-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl border border-blue-200 shadow-xl p-8 sm:p-12 lg:p-14">
-            <div className="max-w-3xl">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-[#0B5ED7]/10 text-[#0B5ED7] text-xs sm:text-sm font-extrabold uppercase tracking-wider mb-3">
-                Our Promise to Every Client
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#051836] leading-tight">
-                We Fulfill Every Commitment—Tailored to Your Requirements & Budget
+            <div className="text-center max-w-3xl mx-auto">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0B5ED7]/10 border border-[#0B5ED7]/25 text-[#0B5ED7] text-xs font-bold uppercase tracking-wider mb-4">
+                <Sparkles className="w-3.5 h-3.5 text-[#0B5ED7]" /> Our Promise to Every Client
+              </div>
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-[#051836] leading-tight">
+                We Fulfill Every <span className="text-[#0B5ED7]">Commitment</span>
               </h2>
               <p className="mt-4 text-sm sm:text-base text-slate-700 leading-relaxed">
-                At Arxolon Technologies, trust is built through actions, not empty promises. Whatever we commit to at the start of your project, we deliver with complete honesty, transparent pricing, and zero hidden surprises. Whether you are launching a startup on a focused budget or scaling an established brand, our team crafts custom digital solutions that fit your exact needs and financial plan.
+                Tailored to your exact <span className="font-bold text-[#051836]">requirements and budget</span>—at Arxolon Technologies, trust is built through actions, transparent pricing, and zero hidden surprises. Whether you are launching a startup on a focused budget or scaling an established brand, our team crafts custom digital solutions that fit your exact needs and financial plan.
               </p>
             </div>
 
             {/* 3 Trust & Budget Commitment Pillars */}
-            <div className="grid md:grid-cols-3 gap-6 my-10">
+            <div className="grid md:grid-cols-3 gap-6 my-12">
               <div className="bg-[#F0F7FF] rounded-2xl p-6 border border-blue-200/80">
                 <Wallet className="w-7 h-7 text-[#0B5ED7] mb-3" />
                 <h3 className="font-extrabold text-lg text-[#051836] mb-1.5">

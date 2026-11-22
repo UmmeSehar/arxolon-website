@@ -507,21 +507,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. PRE-FOOTER CALL TO ACTION (Handshake Visual Above + Wide Zynex-Style Card + Bold WhatsApp Box) */}
+      {/* 7. PRE-FOOTER CALL TO ACTION (Full-Width Transparent PNG Visual Above + Wide Zynex-Style Card + Bold WhatsApp Box) */}
       <section className="py-20 bg-gradient-to-b from-[#EBF4FF] via-[#F8FAFC] to-white text-[#051836] border-t border-blue-200/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Handshake Partnership Visual Above Card */}
-          <div className="max-w-4xl mx-auto mb-8 rounded-3xl overflow-hidden shadow-xl border border-blue-200 bg-white">
+          {/* Full-Width Transparent Visual Matching Card Width */}
+          <div className="w-full mb-8 flex justify-center">
             <img
-              src="/cta-visual.jpg"
+              src="/cta-visual.png"
               alt="Trusted Business Partnership"
               onError={handleImgError}
-              className="w-full h-64 sm:h-80 object-cover"
+              className="w-full max-h-80 sm:max-h-96 object-contain drop-shadow-[0_18px_24px_rgba(5,24,54,0.18)]"
             />
           </div>
 
           {/* Wide Zynex-Style Container Box */}
-          <div className="rounded-3xl bg-gradient-to-r from-white via-[#F0F7FF] to-[#E0F2FE] border border-blue-200/90 shadow-xl p-8 sm:p-12 lg:px-14 lg:py-12 flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
+          <div className="w-full rounded-3xl bg-gradient-to-r from-white via-[#F0F7FF] to-[#E0F2FE] border border-blue-200/90 shadow-xl p-8 sm:p-12 lg:px-14 lg:py-12 flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
             {/* Subtle Decorative Sparkle Accent */}
             <Sparkles className="hidden lg:block w-28 h-28 text-sky-300/35 absolute right-72 top-1/2 -translate-y-1/2 pointer-events-none" />
 

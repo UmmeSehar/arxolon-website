@@ -48,22 +48,22 @@ export default function LeftSocialBar() {
   ];
 
   return (
-    <div className="fixed left-2 sm:left-3.5 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-2.5">
+    <div className="fixed left-0 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-2">
       <div className="relative">
         <button
           type="button"
           onClick={() => setWaBoxOpen(!waBoxOpen)}
           aria-label="WhatsApp"
-          className="group h-11 w-11 hover:w-36 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center pl-3 shadow-lg transition-all duration-300 overflow-hidden"
+          className="group h-12 w-14 hover:w-40 rounded-r-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center pl-4 shadow-lg transition-all duration-300 overflow-hidden"
         >
           {waLogo}
-          <span className="ml-2.5 text-xs sm:text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <span className="ml-3 text-xs sm:text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             WhatsApp
           </span>
         </button>
 
         {waBoxOpen && (
-          <div className="ml-14 -mt-11 w-72 sm:w-80 rounded-2xl bg-white text-[#051836] shadow-2xl border border-emerald-500/30 overflow-hidden">
+          <div className="ml-16 -mt-12 w-72 sm:w-80 rounded-2xl bg-white text-[#051836] shadow-2xl border border-emerald-500/30 overflow-hidden">
             <div className="bg-emerald-500 text-white px-4 py-3 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 {waLogo}
@@ -102,10 +102,10 @@ export default function LeftSocialBar() {
           target="_blank"
           rel="noreferrer"
           aria-label={item.name}
-          className={`group h-11 w-11 hover:w-36 rounded-full ${item.bg} text-white flex items-center pl-3 shadow-lg transition-all duration-300 overflow-hidden`}
+          className={`group h-12 w-14 hover:w-40 rounded-r-full ${item.bg} text-white flex items-center pl-4 shadow-lg transition-all duration-300 overflow-hidden`}
         >
           {item.svg}
-          <span className="ml-2.5 text-xs sm:text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <span className="ml-3 text-xs sm:text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             {item.name}
           </span>
         </a>

@@ -120,14 +120,24 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-sky-300 shrink-0" />
                 <span>Model Town Link Road, Lahore, Pakistan</span>
               </p>
-              <p className="flex items-center gap-2.5 text-slate-400">
+              <a
+                href="https://wa.me/923241282633"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2.5 hover:text-sky-300 transition"
+              >
                 <Phone className="w-4 h-4 text-sky-300 shrink-0" />
-                <span>Direct WhatsApp & Inquiry Available</span>
-              </p>
-              <p className="flex items-center gap-2.5 text-slate-400">
+                <span>+923241282633</span>
+              </a>
+              <a
+                href="https://arxolon-website.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2.5 hover:text-sky-300 transition"
+              >
                 <Globe className="w-4 h-4 text-sky-300 shrink-0" />
-                <span>arxolon-website.vercel.app</span>
-              </p>
+                <span>https://arxolon-website.vercel.app/</span>
+              </a>
             </div>
           </div>
         </div>

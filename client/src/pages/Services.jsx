@@ -39,13 +39,18 @@ export default function Services() {
       icon: Globe,
       img: "/web-dev.jpg",
       description:
-        "Arxolon Technologies builds fast, secure, and visually compelling websites tailored to your business goals. We blend clean code with modern design so your site loads quickly and converts visitors into real customers across every screen size.",
+        "Arxolon Technologies builds fast, secure, and visually compelling websites tailored to your exact business goals. Whether you need a corporate company profile, a service booking portal, or a custom web application, our developers focus on clean architecture, rapid page loading, and seamless navigation across desktops, tablets, and smartphones.",
+      subDescription:
+        "We combine modern technical standards with clear user journeys so visitors immediately understand your brand value and turn into long-term paying clients.",
       points: [
-        "Custom Business Websites",
+        "Custom Business & Corporate Websites",
         "React & Modern Web Applications",
         "WordPress & CMS Development",
-        "Speed & SEO Optimization",
-        "Mobile-First Responsive Layouts",
+        "Full Mobile & Tablet Responsiveness",
+        "On-Page SEO & Speed Optimization",
+        "Contact Forms & WhatsApp Integration",
+        "SSL Security & Hosting Deployment",
+        "Post-Launch Maintenance & Updates",
       ],
     },
     {
@@ -55,13 +60,18 @@ export default function Services() {
       icon: Megaphone,
       img: "/social-marketing.jpg",
       description:
-        "Reach the right audience and turn social engagement into measurable inquiries. Our targeted ad campaigns and strategic content funnels help your brand stand out on Facebook, Instagram, and TikTok with clear performance tracking.",
+        "Reach your ideal customers where they spend the most time and turn social engagement into real business inquiries. Our social media marketing team designs data-driven paid ad campaigns, audience retargeting funnels, and conversion-focused creatives across Facebook, Instagram, and TikTok.",
+      subDescription:
+        "Every campaign is structured around transparent performance tracking so you get measurable brand reach, qualified leads, and steady sales growth without wasted ad spend.",
       points: [
-        "Facebook & Instagram Ad Campaigns",
-        "Lead Generation & Sales Funnels",
-        "Audience Targeting & Retargeting",
-        "Campaign Analytics & Reporting",
-        "Brand Awareness Growth Strategy",
+        "Facebook & Instagram Paid Ad Campaigns",
+        "High-Converting Lead Generation Funnels",
+        "Precision Audience & Location Targeting",
+        "Retargeting & Lookalike Audience Setup",
+        "Ad Copywriting & Scroll-Stopping Creatives",
+        "TikTok & Meta Business Manager Setup",
+        "Weekly Campaign Analytics & Reporting",
+        "Brand Awareness & Customer Growth Strategy",
       ],
     },
     {
@@ -71,13 +81,18 @@ export default function Services() {
       icon: Smartphone,
       img: "/mobile-app.jpg",
       description:
-        "Mobile applications are powerful tools for connecting with your customers on the go. We design and develop intuitive iOS and Android apps with smooth navigation, reliable performance, and clean interfaces.",
+        "Mobile applications put your business directly into your customers' hands with instant convenience. We design and develop intuitive, high-performance Android and iOS mobile apps built around smooth navigation, clean screens, and reliable backend connectivity.",
+      subDescription:
+        "From initial wireframe planning to final store publishing, our team ensures your app feels effortless for everyday users while supporting your business operations.",
       points: [
-        "Android App Development",
-        "iOS App Development",
-        "Cross-Platform React Native Apps",
-        "Clean App UI/UX Prototyping",
-        "App Deployment & Ongoing Support",
+        "Native & Cross-Platform Android Apps",
+        "iOS Mobile Application Development",
+        "React Native High-Speed Mobile Builds",
+        "User-Friendly App UI/UX Prototyping",
+        "Push Notifications & Real-Time Alerts",
+        "Secure Login & Database Integration",
+        "App Performance Testing & Optimization",
+        "Play Store & App Store Publishing Support",
       ],
     },
     {
@@ -87,13 +102,18 @@ export default function Services() {
       icon: Palette,
       img: "/graphic-design.jpg",
       description:
-        "Our designers craft eye-catching visual creatives that communicate your brand message clearly. From daily social media posts and ad banners to brochures, flyers, and packaging designs, we cover every visual need.",
+        "Strong visual presentation builds immediate trust before a customer even reads a single word. Our graphic designers craft clean, modern, and memorable visual assets tailored to your brand personality across both digital platforms and print materials.",
+      subDescription:
+        "From daily Instagram carousels and promotional ad banners to company profiles, brochures, and product packaging, every graphic is aligned with your colors and message.",
       points: [
-        "Social Media Posts & Carousels",
-        "Marketing Flyers, Posters & Banners",
-        "Company Profile & Catalog Design",
-        "Product Packaging & Label Design",
-        "Custom Brand Illustrations",
+        "Social Media Posts & Carousel Graphics",
+        "Promotional Flyers, Posters & Brochures",
+        "Digital Ad Banners & Cover Designs",
+        "Company Profile & Product Catalogs",
+        "Product Packaging & Label Artwork",
+        "Event Invitations & Standee Designs",
+        "Custom Icons & Brand Illustrations",
+        "Print-Ready & High-Resolution Files",
       ],
     },
     {
@@ -103,13 +123,18 @@ export default function Services() {
       icon: Layout,
       img: "/web-design.jpg",
       description:
-        "Great websites start with thoughtful visual structure. We design clean, modern page layouts with clear typography, balanced colors, and effortless user flow so visitors immediately trust your brand.",
+        "A great website begins with thoughtful visual structure and effortless readability. We design modern, clean page layouts with balanced spacing, clear typography, and intuitive user flows that guide visitors naturally toward contacting your business.",
+      subDescription:
+        "Whether you are launching a brand-new site or refreshing an outdated interface, our UI/UX layouts make your business look credible, organized, and easy to explore.",
       points: [
-        "Modern UI/UX Website Layouts",
-        "Landing Page Conversion Design",
-        "Wireframing & Interactive Mockups",
-        "Website Redesign & Modernization",
-        "Consistent Visual Hierarchy",
+        "Modern UI/UX Website Page Layouts",
+        "High-Converting Landing Page Design",
+        "Wireframing & Visual Site Architecture",
+        "Complete Website Redesign & Makeover",
+        "Clean Typography & Color Harmony",
+        "Mobile-First Screen Layout Planning",
+        "Interactive Prototypes & Design Previews",
+        "User-Focused Navigation & Call-to-Actions",
       ],
     },
     {
@@ -119,13 +144,18 @@ export default function Services() {
       icon: Share2,
       img: "/social-management.jpg",
       description:
-        "Stay active and consistent across your social channels without daily stress. Our team handles content calendars, regular posting, profile optimization, and multi-account upkeep across Instagram, Facebook, and TikTok.",
+        "Keep your brand active, consistent, and professional across social platforms without the daily hassle of managing everything yourself. Our team handles content calendars, regular post publishing, profile optimization, and coordinated multi-account care.",
+      subDescription:
+        "We maintain a steady visual voice across Instagram, Facebook, and TikTok so your audience sees a reliable, active business every time they visit your page.",
       points: [
-        "Monthly Content Calendar Planning",
-        "Consistent Posting & Scheduling",
-        "Instagram, Facebook & TikTok Care",
-        "Profile Bio & Highlight Optimization",
-        "Caption Writing & Hashtag Strategy",
+        "Monthly Content Calendar & Scheduling",
+        "Consistent Daily/Weekly Post Publishing",
+        "Instagram, Facebook & TikTok Management",
+        "Profile Bio, Highlights & Page Setup",
+        "Engaging Captions & Hashtag Research",
+        "Consistent Visual Grid & Brand Aesthetic",
+        "Multi-Account Coordinated Handling",
+        "Monthly Page Activity & Growth Overview",
       ],
     },
     {
@@ -135,13 +165,18 @@ export default function Services() {
       icon: Video,
       img: "/video-editing.jpg",
       description:
-        "Capture attention in the first three seconds with crisp, high-retention video edits. We edit promotional ads, Instagram Reels, TikTok shorts, and YouTube videos with smooth transitions, clean audio, and dynamic captions.",
+        "Video is the fastest way to capture attention and explain your offer in seconds. We transform raw footage into crisp, high-retention Instagram Reels, TikTok shorts, promotional ads, and YouTube videos with smooth pacing and clean sound.",
+      subDescription:
+        "By combining dynamic subtitles, clean transitions, background music balance, and social-ready formats, your videos stand out in crowded feeds.",
       points: [
         "Instagram Reels & TikTok Short Edits",
-        "Promotional & Ad Video Editing",
-        "Dynamic Subtitles & Motion Text",
-        "Color Grading & Sound Balancing",
-        "Social-Ready Aspect Ratios",
+        "Promotional & Business Ad Videos",
+        "YouTube Video Cutting & Pacing",
+        "Dynamic Subtitles & Animated Captions",
+        "Smooth Transitions & Motion Graphics",
+        "Audio Cleanup & Background Music Sync",
+        "Color Correction & Visual Polish",
+        "Vertical, Square & Widescreen Exports",
       ],
     },
     {
@@ -151,13 +186,18 @@ export default function Services() {
       icon: ShoppingBag,
       img: "/ecommerce-store.jpg",
       description:
-        "Launch an online storefront built specifically for fashion, apparel, and retail brands. We combine attractive product catalogs, size/variant selectors, and smooth checkout flows to help you sell online effortlessly.",
+        "Turn your fashion, apparel, or retail brand into a 24/7 online storefront designed for effortless shopping. We build clean, product-focused e-commerce stores where customers can browse collections, select sizes or colors, and place orders smoothly.",
+      subDescription:
+        "Every store is structured to highlight your product photography, build buyer confidence, and simplify order management for your team.",
       points: [
-        "Fashion & Apparel Storefront Design",
+        "Fashion, Apparel & Retail Storefronts",
         "Shopify & WooCommerce Store Setup",
-        "Product Catalog & Variant Filtering",
-        "Secure Checkout & Payment Setup",
-        "Mobile Shopping Optimization",
+        "Organized Categories & Collection Pages",
+        "Size, Color & Product Variant Selectors",
+        "Smooth Cart & Fast Checkout Experience",
+        "Cash on Delivery & Payment Integration",
+        "Mobile-Optimized Shopping Browsing",
+        "Easy Inventory & Order Dashboard",
       ],
     },
     {
@@ -167,13 +207,18 @@ export default function Services() {
       icon: Award,
       img: "/brand-logo.jpg",
       description:
-        "Build lasting brand recognition with a distinctive logo and cohesive visual identity. We craft memorable brand marks, color palettes, typography systems, and stationery assets that set your business apart.",
+        "Your logo and visual identity are the face of your company across every website, social page, invoice, and storefront. We design distinctive, timeless logos alongside cohesive color palettes, typography pairings, and brand stationery.",
+      subDescription:
+        "Instead of a random icon, we deliver a complete visual identity kit that makes your business instantly recognizable and trustworthy everywhere.",
       points: [
-        "Custom Minimalist & Emblem Logos",
-        "Brand Color Palette & Typography",
-        "Business Card & Stationery Design",
-        "Social Media Brand Kit",
-        "High-Resolution Vector Source Files",
+        "Custom Minimalist, Wordmark & Emblem Logos",
+        "Multiple Original Logo Concepts",
+        "Official Brand Color Palette & Codes",
+        "Typography & Font Pairing Guidelines",
+        "Business Card & Letterhead Stationery",
+        "Social Media Profile & Banner Kit",
+        "Transparent PNG & Print-Ready Formats",
+        "Editable Vector Source Files (AI/SVG/PDF)",
       ],
     },
   ];
@@ -222,7 +267,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* 2. CLICKABLE 9-SERVICE ICON TAB STRIP (Arfa Technologies Style) */}
+      {/* 2. CLICKABLE 9-SERVICE ICON TAB STRIP */}
       <div className="bg-white border-b border-slate-200 shadow-sm sticky top-[68px] sm:top-[76px] z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-start lg:justify-between gap-2 overflow-x-auto py-3 no-scrollbar">
@@ -255,44 +300,15 @@ export default function Services() {
         </div>
       </div>
 
-      {/* 3. SERVICE GUARANTEES BANNER */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
-        <div className="bg-[#DCEEFF] border border-blue-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-          <div className="grid md:grid-cols-3 gap-5 mb-5">
-            <div className="flex items-start gap-3">
-              <Clock className="w-5 h-5 text-[#0B5ED7] shrink-0 mt-0.5" />
-              <p className="text-sm font-bold text-[#051836]">
-                Work delivered on time according to agreed milestones.
-              </p>
-            </div>
-            <div className="flex items-start gap-3">
-              <Headphones className="w-5 h-5 text-[#0B5ED7] shrink-0 mt-0.5" />
-              <p className="text-sm font-bold text-[#051836]">
-                24/7 support availability for smooth communication.
-              </p>
-            </div>
-            <div className="flex items-start gap-3">
-              <ShieldCheck className="w-5 h-5 text-[#0B5ED7] shrink-0 mt-0.5" />
-              <p className="text-sm font-bold text-[#051836]">
-                Dedicated commitment to quality from start to finish.
-              </p>
-            </div>
-          </div>
-          <p className="text-xs sm:text-sm text-slate-800 font-semibold border-t border-blue-300/80 pt-4">
-            If you connect with our team, they will tell you about more advantages and custom options tailored to your project requirements.
-          </p>
-        </div>
-      </div>
-
-      {/* 4. ALL 9 SERVICES VERTICAL DETAILED SHOWCASE SECTIONS */}
+      {/* 3. ALL 9 SERVICES VERTICAL DETAILED SHOWCASE SECTIONS */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-12">
         {serviceList.map((item, idx) => (
           <section
             key={item.id}
             id={item.id}
-            className="scroll-mt-36 bg-white rounded-3xl border border-blue-100 shadow-md p-7 sm:p-12 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+            className="scroll-mt-36 bg-white rounded-3xl border border-blue-100 shadow-md p-7 sm:p-12 lg:p-14 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center"
           >
-            {/* Left Side: Heading, Detailed Description, Bullet Points & Action Buttons */}
+            {/* Left Side: Heading, Expanded Paragraphs, 8 Bullet Points & Action Buttons */}
             <div className="lg:col-span-7">
               <span className="inline-block px-3.5 py-1 rounded-full bg-[#EBF4FF] text-[#0B5ED7] text-xs font-extrabold uppercase tracking-wider mb-3">
                 Service 0{idx + 1}
@@ -300,12 +316,15 @@ export default function Services() {
               <h2 className="text-2xl sm:text-4xl font-extrabold text-[#051836] mb-4">
                 {item.name}
               </h2>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-3">
                 {item.description}
               </p>
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+                {item.subDescription}
+              </p>
 
-              {/* Feature Checklist Grid */}
-              <div className="grid sm:grid-cols-2 gap-3 mb-8">
+              {/* Expanded 8-Point Feature Checklist Grid */}
+              <div className="grid sm:grid-cols-2 gap-3.5 mb-8">
                 {item.points.map((pt) => (
                   <div
                     key={pt}
@@ -339,70 +358,147 @@ export default function Services() {
               </div>
             </div>
 
-            {/* Right Side: Service Visual */}
+            {/* Right Side: Larger Service Visual */}
             <div className="lg:col-span-5">
               <div className="rounded-2xl overflow-hidden border border-blue-100 shadow-lg bg-[#F1F5F9]">
                 <img
                   src={item.img}
                   alt={item.name}
                   onError={handleImgError}
-                  className="w-full h-64 sm:h-80 object-cover live-motion-img"
+                  className="w-full h-72 sm:h-96 object-cover live-motion-img"
                 />
               </div>
             </div>
           </section>
         ))}
 
-        {/* 5. BOTTOM QUICK SELECT & HANDSHAKE DISCUSSION SECTION (Preserved) */}
-        <div className="space-y-6 pt-4">
-          <div className="bg-gradient-to-r from-[#051836] to-[#0B428A] text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div>
-              <label
-                htmlFor="serviceSelect"
-                className="block text-xs uppercase tracking-wider text-sky-300 font-bold mb-1.5"
-              >
-                Select Service (All 9)
-              </label>
-              <select
-                id="serviceSelect"
-                value={selectedService}
-                onChange={(e) => setSelectedService(e.target.value)}
-                className="px-4 py-2.5 rounded-xl bg-[#07214A] border border-sky-300/30 text-white text-sm font-bold focus:outline-none"
-              >
-                {serviceList.map((s) => (
-                  <option key={s.name} value={s.name}>
-                    {s.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <Link
-              to="/contact"
-              className="px-6 py-3 rounded-full bg-sky-400 hover:bg-sky-300 text-[#051836] font-extrabold text-sm transition"
-            >
-              Continue With {selectedService}
-            </Link>
-          </div>
-
-          <div className="bg-white rounded-2xl border border-blue-200 p-6 sm:p-8 grid md:grid-cols-12 gap-6 items-center shadow-sm">
-            <div className="md:col-span-5 overflow-hidden rounded-xl">
-              <img
-                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80"
-                alt="Handshake and Project Discussion"
-                onError={handleImgError}
-                className="w-full h-56 object-cover rounded-xl live-motion-img"
-              />
-            </div>
-            <div className="md:col-span-7">
-              <h3 className="text-xl sm:text-2xl font-extrabold text-[#051836] mb-2">
-                Let’s Discuss Your Project Details
-              </h3>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                Once you pick a service above and reach out to our team, we can discuss your timeline, goals, and additional advantages together.
+        {/* 4. UNIFIED BOTTOM SECTION (All 3 Advantage & Action Blocks Combined in One Cohesive Showcase) */}
+        <section className="pt-8">
+          <div className="bg-white rounded-3xl border border-blue-200 shadow-xl overflow-hidden">
+            {/* Unified Section Header */}
+            <div className="bg-gradient-to-r from-[#051836] via-[#082A5E] to-[#0B428A] text-white px-7 py-10 sm:px-12">
+              <span className="inline-block px-3.5 py-1 rounded-full bg-sky-400/20 border border-sky-300/30 text-sky-200 text-xs font-extrabold uppercase tracking-wider mb-3">
+                Extra Value With Every Service
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-extrabold">
+                Why Partner With Arxolon & Get Started
+              </h2>
+              <p className="mt-2 text-sm sm:text-base text-blue-100 max-w-3xl">
+                Beyond delivering each service cleanly, our team provides reliable timelines, ongoing guidance, and direct consultation tailored to your business goals.
               </p>
+
+              {/* Part A: 3 Core Service Advantages */}
+              <div className="grid md:grid-cols-3 gap-5 mt-8">
+                <div className="bg-white/10 border border-sky-300/20 rounded-2xl p-5 flex items-start gap-3.5">
+                  <Clock className="w-6 h-6 text-sky-300 shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-extrabold text-sm sm:text-base text-white mb-1">
+                      On-Time Milestone Delivery
+                    </h3>
+                    <p className="text-xs sm:text-sm text-blue-100 leading-relaxed">
+                      Work delivered on schedule according to clearly agreed project milestones.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white/10 border border-sky-300/20 rounded-2xl p-5 flex items-start gap-3.5">
+                  <Headphones className="w-6 h-6 text-sky-300 shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-extrabold text-sm sm:text-base text-white mb-1">
+                      24/7 Responsive Support
+                    </h3>
+                    <p className="text-xs sm:text-sm text-blue-100 leading-relaxed">
+                      Continuous support availability for smooth updates and quick answers.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white/10 border border-sky-300/20 rounded-2xl p-5 flex items-start gap-3.5">
+                  <ShieldCheck className="w-6 h-6 text-sky-300 shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-extrabold text-sm sm:text-base text-white mb-1">
+                      Dedicated Quality Commitment
+                    </h3>
+                    <p className="text-xs sm:text-sm text-blue-100 leading-relaxed">
+                      Consistent attention to detail and quality from initial planning to launch.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Part B: Quick Service Selector Bar */}
+            <div className="bg-[#DCEEFF] border-b border-blue-200 px-7 py-6 sm:px-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div>
+                <label
+                  htmlFor="serviceSelect"
+                  className="block text-xs uppercase tracking-wider text-[#0B5ED7] font-extrabold mb-1.5"
+                >
+                  Quick Select Service (All 9)
+                </label>
+                <select
+                  id="serviceSelect"
+                  value={selectedService}
+                  onChange={(e) => setSelectedService(e.target.value)}
+                  className="px-4 py-2.5 rounded-xl bg-white border border-blue-300 text-[#051836] text-sm font-extrabold focus:outline-none shadow-sm"
+                >
+                  {serviceList.map((s) => (
+                    <option key={s.name} value={s.name}>
+                      {s.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0B5ED7] hover:bg-[#051836] text-white font-extrabold text-sm shadow-md transition"
+              >
+                Continue With {selectedService} <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Part C: Handshake Visual + Discussion Text + Bold WhatsApp Button */}
+            <div className="p-7 sm:p-12 grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-5 overflow-hidden rounded-2xl border border-blue-100 shadow-md">
+                <img
+                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80"
+                  alt="Handshake and Project Discussion"
+                  onError={handleImgError}
+                  className="w-full h-60 object-cover rounded-2xl live-motion-img"
+                />
+              </div>
+              <div className="lg:col-span-7">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-[#051836] mb-3">
+                  Let’s Discuss Your Project Details
+                </h3>
+                <p className="text-sm sm:text-base text-slate-700 leading-relaxed mb-6">
+                  When you connect with our team, we walk you through additional advantages, custom packages, and timeline options tailored to your business requirements. Reach out directly on WhatsApp or via our inquiry form to get started today.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-4">
+                  <a
+                    href={`https://wa.me/923241282633?text=${encodeURIComponent(
+                      `Hello Arxolon Technologies! I would like to discuss my project details for ${selectedService}.`
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-3 px-7 py-4 rounded-2xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-extrabold text-sm sm:text-base shadow-lg shadow-emerald-500/25 transition"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    <span>Chat on WhatsApp — Let’s Discuss</span>
+                  </a>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center gap-2 px-6 py-4 rounded-2xl border-2 border-[#0B5ED7] text-[#0B5ED7] hover:bg-[#0B5ED7] hover:text-white font-extrabold text-sm sm:text-base transition"
+                  >
+                    <span>Send Project Inquiry</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );
